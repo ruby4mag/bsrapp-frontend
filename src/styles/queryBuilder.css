@@ -1,0 +1,19 @@
+.group--actions--tr  > button{
+    color : #0c0c0c;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: solid #8c8484;
+    margin-left: 10px;
+    background: #dbdcdb;
+    border-width: 1px;
+}
+
+ .rule--header > button{
+    color : #0c0c0c;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: solid #8c8484;
+    margin-left: 10px;
+    background: #dbdcdb;
+    border-width: 1px;
+}
