@@ -10,4 +10,7 @@ export default defineConfig({
       "/api": "https://doapi.bsrsport.org",
     },
   },
+  optimizeDeps: {
+    exclude: ['js-big-decimal']
+  }
 })
