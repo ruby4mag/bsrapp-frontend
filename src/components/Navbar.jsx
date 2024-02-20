@@ -18,7 +18,7 @@ import {
 } from '@chakra-ui/react'
 import bsrlogo from "../assets/bsrlogonew.png";
 import strava from '../assets/btn_strava_connectwith_orange.png'
-const redirectUrl = "https://react.bsrsport.org/strava/redirect";
+const redirectUrl = "https://www.bsrsport.org/strava/redirect";
 const scope = "read,activity:read,activity:write"
 
 const handleLogin = () => { window.location = `http://www.strava.com/oauth/authorize?client_id=120373&response_type=code&redirect_uri=${redirectUrl}&approval_prompt=force&scope=${scope}`; };
