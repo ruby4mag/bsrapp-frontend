@@ -12,7 +12,7 @@ WORKDIR /usr/src/app
 COPY . .
 RUN npm install
 WORKDIR /
-RUN rm -r node_modules/.vite
+RUN rm -r usr/src/app/node_modules/.vite
 
 # our app is running on port 5000 within the container, so need to expose it
 EXPOSE 3001
