@@ -10,7 +10,7 @@ export default function StarvaRedirect() {
     //const { id: productId } = useParams()
     const queryParameters = new URLSearchParams(window.location.search)
 
-    axios.get(`https://api.bsrsport.org/strava/redirect`, {
+    axios.get(`https://doapi.bsrsport.org/strava/redirect`, {
         withCredentials: true,
         params: { code: queryParameters.get("code") }
     })
