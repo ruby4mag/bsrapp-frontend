@@ -39,7 +39,7 @@ const ActivityRuleList = () => {
 
 
     useEffect(() => {
-        axios.get(`https://api.bsrsport.org/api/rules`, {
+        axios.get(`https://doapi.bsrsport.org/api/rules`, {
             withCredentials: true
         })
             .then(async function (response) {

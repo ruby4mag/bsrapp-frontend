@@ -39,7 +39,7 @@ const AdminListRuleScreen = () => {
 
 
     useEffect(() => {
-        axios.get(`https://api.bsrsport.org/api/admin/rules`, {
+        axios.get(`https://doapi.bsrsport.org/api/admin/rules`, {
             withCredentials: true
         })
             .then(async function (response) {

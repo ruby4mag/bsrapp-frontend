@@ -175,7 +175,7 @@ class ActivityRuleNew extends Component {
 
         console.log("Logic is " + JSON.stringify(logic))
 
-        axios.post('https://api.bsrsport.org/api/rules', {
+        axios.post('https://doapi.bsrsport.org/api/rules', {
             name: this.state.name,
             setParam: this.state.configparam,
             setValue: this.state.configvalue,
