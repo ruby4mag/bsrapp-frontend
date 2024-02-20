@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     port: 3001,
     proxy: {
-      "/api": "https://api.bsrsport.org",
+      "/api": "https://doapi.bsrsport.org",
     },
   },
 })
