@@ -2,6 +2,10 @@
 FROM node:alpine
 
 # create the directory inside the container
+
+WORKDIR /
+RUN rm -r usr/src/app/node_modules
+
 WORKDIR /usr/src/app
 
 # copy the package.json files from local machine to the workdir in container
