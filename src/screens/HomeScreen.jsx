@@ -403,14 +403,16 @@ export default function HomeScreen() {
                         Longest distances
                         <Divider mt="20px" />
                         <table >
-                            {Object.keys(activityMax).map((key) => {
-                                return (
-                                    <tr key={key}>
-                                        <th>Longest {key}</th>
-                                        <td>{activityMax[key]} kms</td>
-                                    </tr>
-                                )
-                            })}
+                            <tbody>
+                                {Object.keys(activityMax).map((key) => {
+                                    return (
+                                        <tr key={key}>
+                                            <th>Longest {key}</th>
+                                            <td>{activityMax[key]} kms</td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
                         </table>
                     </Box>
                 </SimpleGrid>
