@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { setCredentials } from '../slices/userSlice'
 import { useNavigate } from 'react-router-dom'
 import "../styles/table.css";
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 import {
     Flex,
@@ -39,6 +40,18 @@ import {
     Legend,
 } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
+
+// Google map
+
+const containerStyle = {
+    width: '400px',
+    height: '400px'
+};
+
+const center = {
+    lat: -3.745,
+    lng: -38.523
+};
 
 
 ChartJS.register(
@@ -174,6 +187,26 @@ export const caloriesoptions = {
 };
 
 export default function HomeScreen() {
+
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: "YOUR_API_KEY"
+    })
+
+    const [map, setMap] = React.useState(null)
+
+    const onLoad = React.useCallback(function callback(map) {
+        // This is just an example of getting and using the map instance!!! don't just blindly copy!
+        const bounds = new window.google.maps.LatLngBounds(center);
+        map.fitBounds(bounds);
+
+        setMap(map)
+    }, [])
+
+    const onUnmount = React.useCallback(function callback(map) {
+        setMap(null)
+    }, [])
+
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
