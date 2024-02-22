@@ -30,9 +30,9 @@ const MapsScreen = () => {
         googleMapsApiKey: 'AIzaSyAd235ZXhYOAPNZKrNxgGu5g3ZKef9TiRg',
     });
     //const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
-    const handleMarkerClick = (id, lat, lng, title) => {
+    const handleMarkerClick = (id, lat, lng, title, activityId) => {
         mapRef?.panTo({ lat, lng });
-        setInfoWindowData({ id, title });
+        setInfoWindowData({ id, title, activityId });
         setIsOpen(true);
     };
     return (
@@ -43,21 +43,24 @@ const MapsScreen = () => {
                 <>
                     {userActivities && (
                         <GoogleMap mapContainerClassName="map-container" onLoad={onLoad} onClick={() => setIsOpen(false)}>
-
                             <>
-
                                 {(userActivities.map((act) => {
                                     if (act.start_latlng.length != 0) {
-                                        markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1], title: act.name })
+                                        markers.push({
+                                            lat: act.start_latlng[0],
+                                            lng: act.start_latlng[1],
+                                            title: act.name,
+                                            activityId: act.act_id
+                                        })
                                     }
                                 }))}
                                 {
-                                    markers.map(({ lat, lng, title }, ind) => (
+                                    markers.map(({ lat, lng, title, activityId }, ind) => (
                                         <Marker
                                             position={{ lat, lng }}
                                             key={ind}
                                             onClick={() => {
-                                                handleMarkerClick(ind, lat, lng, title);
+                                                handleMarkerClick(ind, lat, lng, title, activityId);
                                             }}
 
                                         >
@@ -69,6 +72,7 @@ const MapsScreen = () => {
                                                     }}
                                                 >
                                                     <h3>{infoWindowData.title}</h3>
+                                                    <h3>{infoWindowData.activityId}</h3>
                                                 </InfoWindow>
 
                                             )}
@@ -77,7 +81,6 @@ const MapsScreen = () => {
                                 }
                                 onlo
                             </>
-
                         </GoogleMap>
                     )
                     }
