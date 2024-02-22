@@ -74,35 +74,6 @@ export default function ActivitiesScreen() {
                     pagination
                     highlightOnHover
                 />
-
-
-                {/* <Box maxWidth={"100%"} overflowY={"scroll"}>
-                    <TableContainer >
-                        <Table variant='striped' size='sm'>
-
-                            <Thead>
-                                <Tr>
-                                    <Th>Date</Th>
-                                    <Th>Name</Th>
-                                    <Th>Type</Th>
-                                    <Th isNumeric>Distance</Th>
-                                    <Th>Moving Time</Th>
-                                </Tr>
-                            </Thead>
-                            <Tbody>
-                                {userActivities?.map(activity => (
-                                    <Tr key={activity._id}>
-                                        <Td w="fit-content" className='border p-2'> {moment(activity.start_date).format("YYYY-MM-DD  HH:mm a")} </Td>
-                                        <Td className='border p-2'> {activity.name.substring(0, 30)}{activity.name.length >= 20 && '...'} </Td>
-                                        <Td className='border p-2'> {activity.type} </Td>
-                                        <Td className='border p-2'> {(activity.distance / 1000).toString()} </Td>
-                                        <Td className='border p-2'> {moment.duration(activity.moving_time, 'seconds').humanize()} </Td>
-                                    </Tr>
-                                ))}
-                            </Tbody>
-                        </Table>
-                    </TableContainer>
-                </Box> */}
             </Box>
         </>
     )

@@ -2,12 +2,7 @@ import React, { useEffect } from 'react';
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 
-import { useMemo } from "react";
 import "../styles/map.css";
-
-
-
-
 
 const MapsScreen = () => {
 
