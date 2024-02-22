@@ -18,6 +18,7 @@ import ActivitiesScreen from './screens/ActivitiesScreen.jsx'
 import AdminScreen from './screens/admin/AdminScreen.jsx'
 import ActivityRuleNew from './screens/ActivityRule/ActivityRuleNew.jsx'
 import AdminAddRuleScreen from './screens/admin/AdminAddRuleScreen.tsx'
+import MapsScreen from './screens/MapsScreen.jsx'
 import AdminListRuleScreen from './screens/admin/AdminListRuleScreen.jsx'
 
 const router = createBrowserRouter(
@@ -38,7 +39,7 @@ const router = createBrowserRouter(
         <Route path='/activities' element={<ActivitiesScreen />} />
         <Route path='/admin/addrule' element={<AdminAddRuleScreen />} />
         <Route path='/admin' element={<AdminScreen />} />
-
+        <Route path='/maps' element={<MapsScreen />} />
       </Route>
     </Route>
   )
