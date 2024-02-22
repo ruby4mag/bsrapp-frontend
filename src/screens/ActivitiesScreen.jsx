@@ -51,8 +51,6 @@ const columns = [
 
 ];
 
-
-
 export default function ActivitiesScreen() {
 
     const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
