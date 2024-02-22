@@ -7,13 +7,14 @@ import "../styles/map.css";
 const MapsScreen = () => {
 
     const markers = [];
-    const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
-        pollingInterval: 15000,
-        skip: false,
-        refetchOnMountOrArgChange: true
-    })
+
 
     useLayoutEffect(() => {
+        const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
+            pollingInterval: 15000,
+            skip: false,
+            refetchOnMountOrArgChange: true
+        })
         //check local token or something
         userActivities.map((act) => {
             if (act.start_latlng.length != 0) {
