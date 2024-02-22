@@ -5,6 +5,11 @@ import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 import { useMemo } from "react";
 import "../styles/map.css";
 
+userActivities.map((act) => {
+    if (act.start_latlng.length != 0) {
+        markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
+    }
+})
 
 const MapsScreen = () => {
 
@@ -18,13 +23,6 @@ const MapsScreen = () => {
         refetchOnMountOrArgChange: true
     })
 
-    useEffect(
-        userActivities.map((act) => {
-            if (act.start_latlng.length != 0) {
-                markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
-            }
-        })
-    )
 
     const onLoad = (map) => {
         const bounds = new google.maps.LatLngBounds();

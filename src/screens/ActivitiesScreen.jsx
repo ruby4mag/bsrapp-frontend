@@ -1,20 +1,7 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 import DataTable from 'react-data-table-component';
 import moment from 'moment';
 import {
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
-    Container,
-    Flex,
     Heading,
     Link,
     Box
@@ -67,7 +54,6 @@ const columns = [
 
 
 export default function ActivitiesScreen() {
-    const dispatch = useDispatch()
 
     const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
         pollingInterval: 15000,
@@ -75,11 +61,6 @@ export default function ActivitiesScreen() {
         refetchOnMountOrArgChange: true
     })
     console.log(userActivities)
-
-
-
-
-
 
     return (
         <>
