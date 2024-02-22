@@ -1,15 +1,16 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 
 import "../styles/map.css";
+import { useState } from "react";
 
 const MapsScreen = () => {
 
     const markers = [];
 
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
             pollingInterval: 15000,
             skip: false,
@@ -21,7 +22,7 @@ const MapsScreen = () => {
                 markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
             }
         })
-    }, []);
+    }, [userActivities]);
 
 
 
