@@ -18,7 +18,7 @@ const MapsScreen = () => {
             if (act.start_latlng.length != 0) {
                 markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
             }
-        })
+        }), [status]
     )
 
     const onLoad = (map) => {
