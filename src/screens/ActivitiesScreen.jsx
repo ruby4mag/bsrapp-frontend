@@ -7,8 +7,6 @@ import {
     Box
 } from '@chakra-ui/react'
 
-
-
 const columns = [
     {
         name: 'Date',
@@ -48,7 +46,6 @@ const columns = [
         },
         width: "140px"
     },
-
 ];
 
 export default function ActivitiesScreen() {

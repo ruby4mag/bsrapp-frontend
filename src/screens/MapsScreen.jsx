@@ -13,13 +13,14 @@ const MapsScreen = () => {
         refetchOnMountOrArgChange: true
     })
 
-    userActivities.map((act) => {
-        if (act.start_latlng.length != 0) {
-            markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
-        }
-    })
+
 
     const onLoad = (map) => {
+        userActivities.map((act) => {
+            if (act.start_latlng.length != 0) {
+                markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
+            }
+        })
         const bounds = new google.maps.LatLngBounds();
         markers?.forEach(({ lat, lng }) => bounds.extend({ lat, lng }));
         map.fitBounds(bounds);
