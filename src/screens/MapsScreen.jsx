@@ -5,6 +5,7 @@ import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 import "../styles/map.css";
 
 const MapsScreen = () => {
+    const [mapRef, setMapRef] = useState();
     const [isOpen, setIsOpen] = useState(false);
     const [infoWindowData, setInfoWindowData] = useState();
 
@@ -19,6 +20,7 @@ const MapsScreen = () => {
 
 
     const onLoad = (map) => {
+        setMapRef(map);
         const bounds = new google.maps.LatLngBounds();
         markers?.forEach(({ lat, lng }) => bounds.extend({ lat, lng }));
         map.fitBounds(bounds);
