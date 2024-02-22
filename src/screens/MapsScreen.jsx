@@ -32,10 +32,10 @@ const MapsScreen = () => {
                 <h1>Loading...</h1>
             ) : (
                 <GoogleMap mapContainerClassName="map-container" onLoad={onLoad}>
-                    {status === "success" && (
+                    {userActivities && (
                         <>
 
-                            {(userActivities.map((act) => {
+                            {(.map((act) => {
                                 if (act.start_latlng.length != 0) {
                                     markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
                                 }
