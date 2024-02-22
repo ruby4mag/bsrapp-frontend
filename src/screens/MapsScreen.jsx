@@ -10,7 +10,7 @@ const MapsScreen = () => {
     const { data: userActivities, isLoading, error, status } = useGetUserActivityQuery({}, {
         pollingInterval: 15000,
         skip: false,
-        refetchOnMountOrArgChange: true
+        refetchOnMountOrArgChange: false
     })
 
     useEffect(
