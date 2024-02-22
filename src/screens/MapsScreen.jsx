@@ -62,15 +62,15 @@ const MapsScreen = () => {
 
                                         >
                                             {isOpen && infoWindowData?.id === ind && (
-                                                <>
-                                                    <InfoWindow
-                                                        onCloseClick={() => {
-                                                            setIsOpen(false);
-                                                        }}
-                                                    >
-                                                        <h3>{infoWindowData.title}</h3>
-                                                    </InfoWindow>
-                                                </>
+
+                                                <InfoWindow
+                                                    onCloseClick={() => {
+                                                        setIsOpen(false);
+                                                    }}
+                                                >
+                                                    <h3>{infoWindowData.title}</h3>
+                                                </InfoWindow>
+
                                             )}
                                         </Marker>
                                     ))
