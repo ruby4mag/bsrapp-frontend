@@ -1,5 +1,7 @@
 import React from 'react';
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import { useGetUserActivityQuery } from '../slices/activityApiSlice'
+
 import { useMemo } from "react";
 import "../styles/map.css";
 
@@ -11,6 +13,18 @@ const MapsScreen = () => {
         { lat: 18.5314, lng: 73.8446 },
         { lat: 18.5642, lng: 73.7769 },
     ];
+
+    const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
+        pollingInterval: 15000,
+        skip: false,
+        refetchOnMountOrArgChange: true
+    })
+
+    userActivities.map((act) => {
+        if (act.start_latlng.length != 0) {
+            markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
+        }
+    })
 
     const onLoad = (map) => {
         const bounds = new google.maps.LatLngBounds();
