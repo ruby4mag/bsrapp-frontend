@@ -13,14 +13,19 @@ const MapsScreen = () => {
         refetchOnMountOrArgChange: true
     })
 
-
-
-    const onLoad = (map) => {
+    useLayoutEffect(() => {
+        //check local token or something
         userActivities.map((act) => {
             if (act.start_latlng.length != 0) {
                 markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
             }
         })
+    }, []);
+
+
+
+    const onLoad = (map) => {
+
         const bounds = new google.maps.LatLngBounds();
         markers?.forEach(({ lat, lng }) => bounds.extend({ lat, lng }));
         map.fitBounds(bounds);
