@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleMap, Marker, useLoadScript, InfoWindowe } from "@react-google-maps/api";
+import { GoogleMap, Marker, useLoadScript, InfoWindow } from "@react-google-maps/api";
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 
 import "../styles/map.css";
@@ -62,13 +62,15 @@ const MapsScreen = () => {
 
                                         >
                                             {isOpen && infoWindowData?.id === ind && (
-                                                <InfoWindow
-                                                    onCloseClick={() => {
-                                                        setIsOpen(false);
-                                                    }}
-                                                >
-                                                    <h3>{infoWindowData.title}</h3>
-                                                </InfoWindow>
+                                                <>
+                                                    <InfoWindow
+                                                        onCloseClick={() => {
+                                                            setIsOpen(false);
+                                                        }}
+                                                    >
+                                                        <h3>{infoWindowData.title}</h3>
+                                                    </InfoWindow>
+                                                </>
                                             )}
                                         </Marker>
                                     ))
