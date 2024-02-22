@@ -45,6 +45,7 @@ const MapsScreen = () => {
                                     <Marker position={{ lat, lng }} />
                                 ))
                             }
+                            onLoad
                         </>
                     )}
                 </GoogleMap>
