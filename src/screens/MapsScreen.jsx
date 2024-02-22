@@ -35,7 +35,7 @@ const MapsScreen = () => {
                     {userActivities && (
                         <>
 
-                            {(.map((act) => {
+                            {(userActivities.map((act) => {
                                 if (act.start_latlng.length != 0) {
                                     markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
                                 }
