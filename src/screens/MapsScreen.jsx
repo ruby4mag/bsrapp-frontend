@@ -31,24 +31,30 @@ const MapsScreen = () => {
             {!isLoaded ? (
                 <h1>Loading...</h1>
             ) : (
-                <GoogleMap mapContainerClassName="map-container" onLoad={onLoad}>
+                <>
                     {userActivities && (
-                        <>
+                        <GoogleMap mapContainerClassName="map-container" onLoad={onLoad}>
 
-                            {(userActivities.map((act) => {
-                                if (act.start_latlng.length != 0) {
-                                    markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
+                            <>
+
+                                {(userActivities.map((act) => {
+                                    if (act.start_latlng.length != 0) {
+                                        markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
+                                    }
+                                }))}
+                                {
+                                    markers.map(({ lat, lng }) => (
+                                        <Marker position={{ lat, lng }} />
+                                    ))
                                 }
-                            }))}
-                            {
-                                markers.map(({ lat, lng }) => (
-                                    <Marker position={{ lat, lng }} />
-                                ))
-                            }
-                            onLoad
-                        </>
-                    )}
-                </GoogleMap>
+                                onlo
+                            </>
+                            )
+
+                        </GoogleMap>
+                    )
+                    }
+                </>
             )}
         </div>
     );
