@@ -71,8 +71,8 @@ const MapsScreen = () => {
                                                         setIsOpen(false);
                                                     }}
                                                 >
-                                                    <h3>{infoWindowData.title}</h3>
-                                                    <h3>{infoWindowData.activityId}</h3>
+                                                    <h3>{infoWindowData.title} -- {infoWindowData.activityId} </h3>
+
                                                 </InfoWindow>
 
                                             )}
