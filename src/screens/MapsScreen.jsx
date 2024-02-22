@@ -38,7 +38,7 @@ const MapsScreen = () => {
                     {status === "success" && (
                         <>
                             {
-                                marker.map(({ lat, lng }) => (
+                                markers.map(({ lat, lng }) => (
                                     <Marker position={{ lat, lng }} />
                                 ))
                             }
