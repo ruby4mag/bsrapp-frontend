@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 
