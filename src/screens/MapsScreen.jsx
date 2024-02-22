@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, Marker, useLoadScript, InfoWindowe } from "@react-google-maps/api";
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 
 import "../styles/map.css";
