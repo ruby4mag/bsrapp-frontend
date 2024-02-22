@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 
@@ -28,6 +28,11 @@ const MapsScreen = () => {
         googleMapsApiKey: 'AIzaSyAd235ZXhYOAPNZKrNxgGu5g3ZKef9TiRg',
     });
     //const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
+    const handleMarkerClick = (id, lat, lng, title) => {
+        mapRef?.panTo({ lat, lng });
+        setInfoWindowData({ id, title });
+        setIsOpen(true);
+    };
     return (
         <div className="App">
             {!isLoaded ? (
