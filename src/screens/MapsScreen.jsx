@@ -10,16 +10,11 @@ const MapsScreen = () => {
     const { data: userActivities, isLoading, error, status } = useGetUserActivityQuery({}, {
         pollingInterval: 15000,
         skip: false,
-        refetchOnMountOrArgChange: false
+        refetchOnMountOrArgChange: true
     })
 
-    useEffect(
-        userActivities.map((act) => {
-            if (act.start_latlng.length != 0) {
-                markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
-            }
-        }), [status]
-    )
+
+
 
     const onLoad = (map) => {
         const bounds = new google.maps.LatLngBounds();
@@ -39,6 +34,12 @@ const MapsScreen = () => {
                 <GoogleMap mapContainerClassName="map-container" onLoad={onLoad}>
                     {status === "success" && (
                         <>
+
+                            {(userActivities.map((act) => {
+                                if (act.start_latlng.length != 0) {
+                                    markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
+                                }
+                            }))}
                             {
                                 markers.map(({ lat, lng }) => (
                                     <Marker position={{ lat, lng }} />
