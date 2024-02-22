@@ -5,6 +5,12 @@ import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 import { useMemo } from "react";
 import "../styles/map.css";
 
+const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
+    pollingInterval: 15000,
+    skip: false,
+    refetchOnMountOrArgChange: true
+})
+
 userActivities.map((act) => {
     if (act.start_latlng.length != 0) {
         markers.push({ lat: act.start_latlng[0], lng: act.start_latlng[1] })
@@ -17,11 +23,7 @@ const MapsScreen = () => {
 
     const markers = [];
 
-    const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
-        pollingInterval: 15000,
-        skip: false,
-        refetchOnMountOrArgChange: true
-    })
+
 
 
     const onLoad = (map) => {
