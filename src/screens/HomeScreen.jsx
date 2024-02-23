@@ -358,18 +358,12 @@ export default function HomeScreen() {
         try {
             const res = await axios.get(`${BACKEND_URL}/api/activities/getActivityTotals`, {
                 withCredentials: true
-            }).then((req, res) => {
-                console.log(`Response is ${JSON.stringify(res)}`)
-            }).catch((err) => {
-                console.log(`Error is ${JSON.stringify(err)}`)
             })
             console.log(`Status is ${res.status}`)
-            if (res.status != 200) {
-                logout
-            } else {
-                setActivitytotalslabels(res.data.labels)
-                setActivitytotalschartvalues(res.data.values)
-            }
+
+            setActivitytotalslabels(res.data.labels)
+            setActivitytotalschartvalues(res.data.values)
+
         } catch (err) {
             toast.error(err?.data?.message || err?.error)
         }
