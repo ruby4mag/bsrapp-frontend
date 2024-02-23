@@ -358,6 +358,7 @@ export default function HomeScreen() {
             const res = await axios.get(`${BACKEND_URL}/api/activities/getActivityTotals`, {
                 withCredentials: true
             })
+            console.log(`Status is ${res.status}`)
             if (res.status != 200) {
                 logout
             } else {
