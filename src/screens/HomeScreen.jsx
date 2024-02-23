@@ -5,6 +5,7 @@ import axios from "axios"
 import { BACKEND_URL } from '../constants'
 import { useDispatch } from 'react-redux'
 import { logout, setCredentials } from '../slices/userSlice'
+import { useLogoutMutation } from '../slices/userApiSlice'
 import { useNavigate } from 'react-router-dom'
 import "../styles/table.css";
 
@@ -352,14 +353,23 @@ export default function HomeScreen() {
             toast.error(err?.data?.message || err?.error)
         }
     }
-
     const getActivityTotals = async () => {
         try {
+            //const dispatch = useDispatch()
+            const [logoutApi] = useLogoutMutation()
             const res = await axios.get(`${BACKEND_URL}/api/activities/getActivityTotals`, {
                 withCredentials: true
             }).then((req, res) => {
                 console.log(`Response is ${JSON.stringify(res)}`)
-            }).catch((err) => {
+            }).catch(async (err) => {
+                try {
+                    await logoutApi().unwrap()
+                    dispatch(logout())
+                    toast.info("logged Out Successfully")
+                    navigate("/login")
+                } catch (err) {
+                    toast.error(err?.data?.message || error?.error)
+                }
                 console.log(`Error is ${JSON.stringify(err)}`)
             })
             console.log(`Status is ${res.status}`)
