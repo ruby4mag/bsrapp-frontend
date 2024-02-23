@@ -353,23 +353,14 @@ export default function HomeScreen() {
             toast.error(err?.data?.message || err?.error)
         }
     }
+
     const getActivityTotals = async () => {
         try {
-            //const dispatch = useDispatch()
-            const [logoutApi] = useLogoutMutation()
             const res = await axios.get(`${BACKEND_URL}/api/activities/getActivityTotals`, {
                 withCredentials: true
             }).then((req, res) => {
                 console.log(`Response is ${JSON.stringify(res)}`)
-            }).catch(async (err) => {
-                try {
-                    await logoutApi().unwrap()
-                    dispatch(logout())
-                    toast.info("logged Out Successfully")
-                    navigate("/login")
-                } catch (err) {
-                    toast.error(err?.data?.message || error?.error)
-                }
+            }).catch((err) => {
                 console.log(`Error is ${JSON.stringify(err)}`)
             })
             console.log(`Status is ${res.status}`)
