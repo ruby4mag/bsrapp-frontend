@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from "axios"
 import { BACKEND_URL } from '../constants'
 import { useDispatch } from 'react-redux'
-import { setCredentials } from '../slices/userSlice'
+import { logout, setCredentials } from '../slices/userSlice'
 import { useNavigate } from 'react-router-dom'
 import "../styles/table.css";
 
@@ -358,9 +358,12 @@ export default function HomeScreen() {
             const res = await axios.get(`${BACKEND_URL}/api/activities/getActivityTotals`, {
                 withCredentials: true
             })
-            setActivitytotalslabels(res.data.labels)
-            setActivitytotalschartvalues(res.data.values)
-
+            if (res.status != 200) {
+                logout
+            } else {
+                setActivitytotalslabels(res.data.labels)
+                setActivitytotalschartvalues(res.data.values)
+            }
         } catch (err) {
             toast.error(err?.data?.message || err?.error)
         }
