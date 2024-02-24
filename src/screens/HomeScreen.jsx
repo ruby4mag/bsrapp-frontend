@@ -188,8 +188,8 @@ export default function HomeScreen() {
     const htmlLegendPlugin = {
         id: 'legend-container',
         afterUpdate(chart, args, options) {
+            console.log("I am called")
 
-            <>Magin</>
 
         }
     }
