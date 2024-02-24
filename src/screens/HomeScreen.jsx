@@ -69,7 +69,7 @@ export const activityYearHistoryOptions = {
     maintainAspectRatio: false,
     plugins: {
         legend: {
-            position: 'right',
+            position: 'top',
             display: true,
             title: {
                 display: true,
