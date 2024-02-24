@@ -73,7 +73,7 @@ const Navbar = () => {
             </Flex>
             <Flex minWidth='max-content' alignItems='center' gap='2' justify={"center"} bg={"#03314d"} h={"60px"}>
                 <Box pl='10px' color={"white"} fontSize={30}>
-                    BSR Sport
+                    <Link to="/">BSR Sport</Link>
                 </Box>
                 <Spacer />
                 <Box display={{ base: "none", md: "flex" }} >
