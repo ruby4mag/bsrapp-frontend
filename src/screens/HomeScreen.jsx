@@ -90,10 +90,6 @@ export const doughnutoptions = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-        htmlLegend: {
-            // ID of the container to put the legend in
-            containerID: 'legend-container',
-        },
         legend: {
             position: 'top',
             display: false
@@ -189,7 +185,20 @@ export default function HomeScreen() {
         id: 'legend-container',
         afterUpdate(chart, args, options) {
             console.log("I am called")
+            const legendContainer = document.getElementById(id);
+            let listContainer = legendContainer.querySelector('ul');
 
+            if (!listContainer) {
+                listContainer = document.createElement('ul');
+                listContainer.style.display = 'flex';
+                listContainer.style.flexDirection = 'row';
+                listContainer.style.margin = 0;
+                listContainer.style.padding = 0;
+
+                legendContainer.appendChild(listContainer);
+            }
+
+            return listContainer;
 
         }
     }
