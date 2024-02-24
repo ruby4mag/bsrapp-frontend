@@ -36,6 +36,7 @@ import {
     LineElement,
     BarElement,
     ArcElement,
+    htmlLegend,
     Title,
     Tooltip,
     Legend,
