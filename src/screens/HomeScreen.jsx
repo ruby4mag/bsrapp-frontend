@@ -393,7 +393,7 @@ export default function HomeScreen() {
 
     return (
         <>
-            <Card m="20px" min-width={"fit-content"} p="20px" color={"#032d46"}>
+            <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"}>
                 <CardHeader>
                     <Heading color={"#032d46"} size='md'>Overall Statistics</Heading>
                 </CardHeader>
@@ -421,7 +421,7 @@ export default function HomeScreen() {
                 </SimpleGrid>
             </Card>
 
-            <Card m="20px" min-width={"fit-content"} p="20px" color={"#032d46"} >
+            <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                 <CardHeader>
                     <Heading color={"#032d46"} size='md'>Monthly Statistics</Heading>
                 </CardHeader>

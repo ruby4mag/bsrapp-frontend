@@ -84,11 +84,11 @@ const Navbar = () => {
                         <Button bg="transparent" width={"fit-content"} _hover={{ bg: "transparent" }}>
                             <img src={strava} alt="strava_connect" height="15" width="180" onClick={handleLogin} />
                         </Button>
-                        <Link to="/activities"><Button w="100px" mt={"0px"} bg={"rgb(120, 85, 247)"} color={"white"} _hover={{ bg: "tomato" }} px={4} borderRadius={"0px"} py={0} h={"35px"}> Activities</Button></Link>
-                        <Link to="/maps"><Button w="100px" mt={"0px"} bg={"rgb(120, 85, 247)"} color={"white"} _hover={{ bg: "tomato" }} px={4} borderRadius={"0px"} py={0} h={"35px"}> Map View</Button></Link>
+                        <Link to="/activities"><Button w="100px" mt={"0px"} bg={"transparent)"} color={"white"} _hover={{ bg: "tomato" }} px={4} borderRadius={"0px"} py={0} h={"35px"}> Activities</Button></Link>
+                        <Link to="/maps"><Button w="100px" mt={"0px"} bg={"transparent"} color={"white"} _hover={{ bg: "tomato" }} px={4} borderRadius={"0px"} py={0} h={"35px"}> Map View</Button></Link>
                         {(userInfo?.isAdmin == true) ? <Link to="/admin"><Button w="100px" mt={"0px"} bg={"rgb(120, 85, 247)"} color={"white"} _hover={{ bg: "tomato" }} px={4} borderRadius={"0px"} py={0} h={"35px"}> Admin</Button></Link> : ''}
                         <Menu>
-                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} w="fit-content" mt={"0px"} bg={"rgb(120, 85, 247)"} color={"white"} _hover={{ bg: "tomato" }} px={4} borderRadius={"0px"} py={0} h={"35px"}>
+                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} w="fit-content" mt={"0px"} bg={"transparent"} color={"white"} _hover={{ bg: "tomato" }} px={4} borderRadius={"0px"} py={0} h={"35px"}>
                                 {userInfo?.name}
                             </MenuButton>
                             <MenuList>
