@@ -73,7 +73,7 @@ const Navbar = () => {
             </Flex>
             <Flex minWidth='max-content' alignItems='center' gap='2' justify={"center"} bg={"#03314d"} h={"60px"}>
                 <Box pl='10px'>
-                    <img src={bsrlogo} alt="BSRLogo" height="10" width="120" onClick={gohome} />
+                    BSR Sport
                 </Box>
                 <Spacer />
                 <Box display={{ base: "none", md: "flex" }} >
