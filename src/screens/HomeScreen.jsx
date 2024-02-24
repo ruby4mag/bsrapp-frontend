@@ -188,9 +188,9 @@ export default function HomeScreen() {
     const htmlLegendPlugin = {
         id: 'htmlLegend',
         afterUpdate(chart, args, options) {
-            items.forEach((item, index) => {
-                Magin
-            })
+
+            <>Magin</>
+
         }
     }
 
