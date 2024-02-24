@@ -398,11 +398,11 @@ export default function HomeScreen() {
                     <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
                 </CardHeader>
                 <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(243, 243, 255)' height='250px'><Bar options={activityYearHistoryOptions} data={data} />
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} />
                     </Box>
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(243, 243, 255)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} />
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} />
                     </Box>
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(243, 243, 255)' height='250px'>
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'>
                         Longest distances
                         <Divider mt="20px" />
                         <table >
@@ -426,9 +426,9 @@ export default function HomeScreen() {
                     <Heading color={"#4a9acb"} size='md'>Monthly Statistics</Heading>
                 </CardHeader>
                 <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(243, 243, 255)' height='250px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box>
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(243, 243, 255)' height='250px'><Line options={rundistanceoptions} data={rundistancedata} /></Box>
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(243, 243, 255)' height='250px'><Line options={caloriesoptions} data={caloriesdata} /></Box>
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box>
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={rundistanceoptions} data={rundistancedata} /></Box>
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={caloriesoptions} data={caloriesdata} /></Box>
                 </SimpleGrid>
             </Card>
             <ToastContainer />
