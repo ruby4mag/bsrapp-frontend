@@ -402,7 +402,7 @@ export default function HomeScreen() {
                     </Box>
                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} />
                     </Box>
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'>
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px' color={"white"}>
                         Longest distances
                         <Divider mt="20px" />
                         <table >
@@ -410,7 +410,7 @@ export default function HomeScreen() {
                                 {Object.keys(activityMax).map((key) => {
                                     return (
                                         <tr key={key}>
-                                            <th>Longest {key}</th>
+                                            <th style={{ color: 'white' }}>{key}</th>
                                             <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
                                         </tr>
                                     )
