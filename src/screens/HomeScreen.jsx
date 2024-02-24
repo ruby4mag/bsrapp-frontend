@@ -91,7 +91,7 @@ export const doughnutoptions = {
     maintainAspectRatio: false,
     plugins: {
         legend: {
-            position: 'top',
+            position: 'left',
             display: true
         },
         title: {
