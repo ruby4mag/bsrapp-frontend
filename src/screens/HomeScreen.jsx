@@ -92,7 +92,7 @@ export const doughnutoptions = {
     plugins: {
         legend: {
             position: 'top',
-            display: false
+            display: true
         },
         title: {
             display: true,
