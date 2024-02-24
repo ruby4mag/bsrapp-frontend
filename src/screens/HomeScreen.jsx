@@ -36,7 +36,6 @@ import {
     LineElement,
     BarElement,
     ArcElement,
-    htmlLegend,
     Title,
     Tooltip,
     Legend,
@@ -186,7 +185,14 @@ export const caloriesoptions = {
 
 export default function HomeScreen() {
 
-
+    const htmlLegendPlugin = {
+        id: 'htmlLegend',
+        afterUpdate(chart, args, options) {
+            items.forEach((item, index) => {
+                Magin
+            })
+        }
+    }
 
 
     const navigate = useNavigate()
@@ -406,7 +412,7 @@ export default function HomeScreen() {
                 <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} />
                     </Box>
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><div id="legend-container">Ride and Run</div><Doughnut data={doughnutdata} options={doughnutoptions} plugins={[htmlLegend]} />
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><div id="legend-container">Ride and Run</div><Doughnut data={doughnutdata} options={doughnutoptions} plugins={[htmlLegendPlugin]} />
                     </Box>
                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'>
                         Longest distances
