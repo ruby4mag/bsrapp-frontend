@@ -393,9 +393,9 @@ export default function HomeScreen() {
 
     return (
         <>
-            <Card m="20px" min-width={"fit-content"} p="20px">
+            <Card m="20px" min-width={"fit-content"} p="20px" color={"#032d46"}>
                 <CardHeader>
-                    <Heading size='md'>Overall Statistics</Heading>
+                    <Heading color={"#032d46"} size='md'>Overall Statistics</Heading>
                 </CardHeader>
                 <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
                     <Box borderRadius={"10px"} p="20px" bg='rgb(243, 243, 255)' height='250px'><Bar options={activityYearHistoryOptions} data={data} />
@@ -421,9 +421,9 @@ export default function HomeScreen() {
                 </SimpleGrid>
             </Card>
 
-            <Card m="20px" min-width={"fit-content"} p="20px">
+            <Card m="20px" min-width={"fit-content"} p="20px" color={"#032d46"} >
                 <CardHeader>
-                    <Heading size='md'>Monthly Statistics</Heading>
+                    <Heading color={"#032d46"} size='md'>Monthly Statistics</Heading>
                 </CardHeader>
                 <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
                     <Box borderRadius={"10px"} p="20px" bg='rgb(243, 243, 255)' height='250px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box>
