@@ -181,27 +181,6 @@ export const caloriesoptions = {
 
 export default function HomeScreen() {
 
-    const htmlLegendPlugin = {
-        id: 'legend-container',
-        afterUpdate(chart, args, options) {
-            console.log("I am called")
-            const legendContainer = document.getElementById(id);
-            let listContainer = legendContainer.querySelector('ul');
-
-            if (!listContainer) {
-                listContainer = document.createElement('ul');
-                listContainer.style.display = 'flex';
-                listContainer.style.flexDirection = 'row';
-                listContainer.style.margin = 0;
-                listContainer.style.padding = 0;
-
-                legendContainer.appendChild(listContainer);
-            }
-
-            return listContainer;
-
-        }
-    }
 
 
     const navigate = useNavigate()
@@ -421,7 +400,7 @@ export default function HomeScreen() {
                 <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} />
                     </Box>
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><div id="legend-container">Ride and Run</div><Doughnut data={doughnutdata} options={doughnutoptions} plugins={[htmlLegendPlugin]} />
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} />
                     </Box>
                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'>
                         Longest distances
