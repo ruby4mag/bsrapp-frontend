@@ -1,4 +1,8 @@
  
+.chakra-card > table > tbody > tr > th {
+    color : white;
+    }
+
 th {
     border-bottom: 1px solid black;
     text-align: left;
@@ -9,6 +13,3 @@ td {
     border-bottom: 1px solid black;
 }
 
-.chakra-card > table > tbody > tr > th {
-color : white;
-}
