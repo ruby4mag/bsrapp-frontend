@@ -71,7 +71,7 @@ const Navbar = () => {
             >
                 <Spacer spacing="in-between" />
             </Flex>
-            <Flex minWidth='max-content' alignItems='center' gap='2' justify={"center"} bg={"rgb(120, 70, 242)"} h={"60px"}>
+            <Flex minWidth='max-content' alignItems='center' gap='2' justify={"center"} bg={"#03314d"} h={"60px"}>
                 <Box pl='10px'>
                     <img src={bsrlogo} alt="BSRLogo" height="10" width="120" onClick={gohome} />
                 </Box>
