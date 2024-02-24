@@ -186,7 +186,7 @@ export const caloriesoptions = {
 export default function HomeScreen() {
 
     const htmlLegendPlugin = {
-        id: 'htmlLegend',
+        id: 'legend-container',
         afterUpdate(chart, args, options) {
 
             <>Magin</>
