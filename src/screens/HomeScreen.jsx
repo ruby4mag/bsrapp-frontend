@@ -277,15 +277,7 @@ export default function HomeScreen() {
                     'rgba(110, 62, 005, 0.5)',
                     'rgba(110, 12, 105, 0.5)',
                 ],
-                borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(53, 162, 235)',
-                    'rgb(53, 162, 005)',
-                    'rgb(153, 162, 005)',
-                    'rgb(153, 62, 005)',
-                    'rgb(110, 62, 005)',
-                    'rgb(110, 12, 105)',
-                ],
+
                 borderWidth: 1,
             },
         ],
