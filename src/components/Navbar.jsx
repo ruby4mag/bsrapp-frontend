@@ -72,7 +72,7 @@ const Navbar = () => {
                 <Spacer spacing="in-between" />
             </Flex>
             <Flex minWidth='max-content' alignItems='center' gap='2' justify={"center"} bg={"#03314d"} h={"60px"}>
-                <Box pl='10px'>
+                <Box pl='10px' color={"white"} fontSize={10}>
                     BSR Sport
                 </Box>
                 <Spacer />
