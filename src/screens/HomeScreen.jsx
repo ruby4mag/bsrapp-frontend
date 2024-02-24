@@ -90,6 +90,10 @@ export const doughnutoptions = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
+        htmlLegend: {
+            // ID of the container to put the legend in
+            containerID: 'legend-container',
+        },
         legend: {
             position: 'top',
             display: false
@@ -401,7 +405,7 @@ export default function HomeScreen() {
                 <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} />
                     </Box>
-                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} />
+                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><div id="legend-container">Ride and Run</div><Doughnut data={doughnutdata} options={doughnutoptions} plugins={[htmlLegend]} />
                     </Box>
                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'>
                         Longest distances
