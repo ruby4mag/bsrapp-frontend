@@ -411,7 +411,7 @@ export default function HomeScreen() {
                                     return (
                                         <tr key={key}>
                                             <th>Longest {key}</th>
-                                            <td style="color:white;">{activityMax[key]} kms</td>
+                                            <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
                                         </tr>
                                     )
                                 })}
