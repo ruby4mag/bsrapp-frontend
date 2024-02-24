@@ -70,12 +70,13 @@ export const activityYearHistoryOptions = {
     plugins: {
         legend: {
             position: 'right',
-            display: true
-        },
-        title: {
             display: true,
-            text: 'Yearly stats',
+            title: {
+                display: true,
+                text: 'Yearly stats',
+            },
         },
+
     },
 };
 
