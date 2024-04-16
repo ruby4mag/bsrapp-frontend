@@ -15,7 +15,7 @@ import {
     ModalCloseButton,
     ModalFooter
 } from '@chakra-ui/react'
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const columns = [
     {
@@ -60,18 +60,8 @@ const columns = [
 
 export default function ActivitiesScreen() {
 
+    const [content, setContent] = useState("Initial")
 
-    const getActivityCalories = async () => {
-        try {
-            const res = await axios.get(`${BACKEND_URL}/api/activities/getActivitycalories`, {
-                withCredentials: true
-            })
-            setCalorieslabels(res.data.labels)
-            setCalorieschartvalues(res.data.values)
-        } catch (err) {
-            toast.error(err?.data?.message || err?.error)
-        }
-    }
 
 
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -89,15 +79,17 @@ export default function ActivitiesScreen() {
             const res = await axios.get(`${BACKEND_URL}/api/activities/getActivitycalories`, {
                 withCredentials: true
             })
+            setContent = res.data.values.toString()
+            //
             return (
                 <Box>
                     {console.log("modal-lazy-render")}
-                    <Box>{res.data.values.toString()}</Box>
+                    <Box>{content}</Box>
                 </Box>
             );
 
         } catch (err) {
-            toast.error(err?.data?.message || err?.error)
+            //toast.error(err?.data?.message || err?.error)
             return (
                 <Box>
                     {console.log("modal-lazy-render")}
