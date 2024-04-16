@@ -17,7 +17,7 @@ import {
     ModalFooter
 } from '@chakra-ui/react'
 import { useRef, useState } from 'react';
-
+const [act, setAct] = useState("")
 const columns = [
     {
         name: 'Date',
@@ -37,12 +37,13 @@ const columns = [
     {
         name: 'Type',
         selector: row => row.type,
-        width: "80px"
+        width: "80px",
     },
     {
         name: 'Distance(Km)',
         selector: row => row.distance,
         cell: (row, i, c, id) => {
+            setAct = row.act_id
             return <span>{parseFloat((row.distance / 1000).toString()).toFixed(2)}</span>
         },
         width: "100 px"
@@ -103,7 +104,7 @@ export default function ActivitiesScreen() {
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <Remote />
+                        <Remote activity={act} />
                     </ModalBody>
 
                     <ModalFooter>
