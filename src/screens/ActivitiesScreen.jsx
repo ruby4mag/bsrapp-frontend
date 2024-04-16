@@ -13,7 +13,8 @@ import {
     ModalHeader,
     ModalContent,
     ModalCloseButton,
-    ModalFooter
+    ModalFooter,
+    Lorem
 } from '@chakra-ui/react'
 import { useRef } from 'react';
 
