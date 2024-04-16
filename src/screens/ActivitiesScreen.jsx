@@ -63,7 +63,7 @@ export default function ActivitiesScreen() {
     ];
 
     const handleRow = (row, e) => {
-        {onOpen}
+        onOpen
         console.log(row, e)
     }
 
