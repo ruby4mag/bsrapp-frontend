@@ -7,6 +7,7 @@ import {
     Link,
     Box
 } from '@chakra-ui/react'
+import { useRef } from 'react';
 
 const columns = [
     {
@@ -53,7 +54,7 @@ export default function ActivitiesScreen() {
 
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const finalRef = React.useRef(null)
+    const finalRef = useRef(null)
     const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
         pollingInterval: 15000,
         skip: false,
