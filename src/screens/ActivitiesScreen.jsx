@@ -84,7 +84,6 @@ export default function ActivitiesScreen() {
                     data={userActivities}
                     pagination
                     highlightOnHover
-                    onRowClicked={setAct = row.id}
                 />
             </Box>
 
