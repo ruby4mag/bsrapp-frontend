@@ -18,7 +18,6 @@ import {
 } from '@chakra-ui/react'
 import { useRef, useState } from 'react';
 
-
 export default function ActivitiesScreen() {
 
     const [act, setAct] = useState("")
