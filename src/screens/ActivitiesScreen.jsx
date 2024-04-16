@@ -87,7 +87,7 @@ export default function ActivitiesScreen() {
                     data={userActivities}
                     pagination
                     highlightOnHover
-                    onRowClicked={handleRow(row)}
+                    onRowClicked={(row, event) => { handleRow(row) }}
                 />
             </Box>
 
