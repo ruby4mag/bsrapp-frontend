@@ -73,10 +73,14 @@ export default function ActivitiesScreen() {
     })
     console.log(userActivities)
 
-    const Content = () => {
+    const Content = async () => {
 
         try {
-
+            const res = await axios.get(`${BACKEND_URL}/api/activities/getActivitycalories`, {
+                withCredentials: true
+            })
+            setContent = res.data.values.toString()
+            //
             return (
                 <Box>
                     {console.log("modal-lazy-render")}
