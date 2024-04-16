@@ -83,14 +83,30 @@ export default function ActivitiesScreen() {
     })
     console.log(userActivities)
 
-    const Content = () => {
+    const Content = async () => {
+
+        try {
+            const res = await axios.get(`${BACKEND_URL}/api/activities/getActivitycalories`, {
+                withCredentials: true
+            })
+            return (
+                <Box>
+                    {console.log("modal-lazy-render")}
+                    <Box>{res.data.values}</Box>
+                </Box>
+            );
+
+        } catch (err) {
+            toast.error(err?.data?.message || err?.error)
+            return (
+                <Box>
+                    {console.log("modal-lazy-render")}
+                    <Box>Error</Box>
+                </Box>
+            );
+        }
         console.log("modal-lazy-inner");
-        return (
-            <Box>
-                {console.log("modal-lazy-render")}
-                <Box>content</Box>
-            </Box>
-        );
+
     };
 
     return (
