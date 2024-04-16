@@ -92,7 +92,7 @@ export default function ActivitiesScreen() {
             return (
                 <Box>
                     {console.log("modal-lazy-render")}
-                    <Box>{res.data.values}</Box>
+                    <Box>{res.data.values.toString}</Box>
                 </Box>
             );
 
@@ -105,7 +105,6 @@ export default function ActivitiesScreen() {
                 </Box>
             );
         }
-        console.log("modal-lazy-inner");
 
     };
 
