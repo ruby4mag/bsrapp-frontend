@@ -74,8 +74,6 @@ export default function ActivitiesScreen() {
     })
     console.log(userActivities)
 
-
-
     return (
         <>
             <Box m="30px">
