@@ -1,5 +1,6 @@
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 import DataTable from 'react-data-table-component';
+import { Remote } from '../components/Remote'
 import moment from 'moment';
 import { useDisclosure } from '@chakra-ui/react'
 import {
@@ -60,7 +61,7 @@ const columns = [
 
 export default function ActivitiesScreen() {
 
-    const [content, setContent] = useState("Initial")
+
 
 
 
@@ -73,32 +74,7 @@ export default function ActivitiesScreen() {
     })
     console.log(userActivities)
 
-    const Content = () => {
 
-        try {
-            const res = axios.get(`${BACKEND_URL}/api/activities/getActivitycalories`, {
-                withCredentials: true
-            })
-            setContent = res.data.values.toString()
-            //
-            return (
-                <Box>
-                    {console.log("modal-lazy-render")}
-                    <Box></Box>
-                </Box>
-            );
-
-        } catch (err) {
-            //toast.error(err?.data?.message || err?.error)
-            return (
-                <Box>
-                    {console.log("modal-lazy-render")}
-                    <Box>Error</Box>
-                </Box>
-            );
-        }
-
-    };
 
     return (
         <>
@@ -128,7 +104,7 @@ export default function ActivitiesScreen() {
                     <ModalCloseButton />
                     <ModalBody>
                         <Content>
-                            {content}
+                            <Remote />
                         </Content>
                     </ModalBody>
 
