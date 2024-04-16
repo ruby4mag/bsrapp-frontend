@@ -61,6 +61,19 @@ const columns = [
 export default function ActivitiesScreen() {
 
 
+    const getActivityCalories = async () => {
+        try {
+            const res = await axios.get(`${BACKEND_URL}/api/activities/getActivitycalories`, {
+                withCredentials: true
+            })
+            setCalorieslabels(res.data.labels)
+            setCalorieschartvalues(res.data.values)
+        } catch (err) {
+            toast.error(err?.data?.message || err?.error)
+        }
+    }
+
+
     const { isOpen, onOpen, onClose } = useDisclosure()
     const finalRef = useRef(null)
     const { data: userActivities, isLoading, error } = useGetUserActivityQuery({}, {
@@ -69,6 +82,16 @@ export default function ActivitiesScreen() {
         refetchOnMountOrArgChange: true
     })
     console.log(userActivities)
+
+    const Content = () => {
+        console.log("modal-lazy-inner");
+        return (
+            <Box>
+                {console.log("modal-lazy-render")}
+                <Box>content</Box>
+            </Box>
+        );
+    };
 
     return (
         <>
@@ -97,7 +120,7 @@ export default function ActivitiesScreen() {
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        dsadadsadadasdasdasd
+                        <Content />
                     </ModalBody>
 
                     <ModalFooter>
