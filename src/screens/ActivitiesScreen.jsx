@@ -62,8 +62,8 @@ export default function ActivitiesScreen() {
         },
     ];
 
-    const handleRow = (row) => {
-        console.log(row)
+    const handleRow = (row, e) => {
+        console.log(row, e)
     }
 
 
