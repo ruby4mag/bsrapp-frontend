@@ -47,7 +47,6 @@ export default function ActivitiesScreen() {
             name: 'Distance(Km)',
             selector: row => row.distance,
             cell: (row, i, c, id) => {
-                setAct = row.act_id
                 return <span>{parseFloat((row.distance / 1000).toString()).toFixed(2)}</span>
             },
             width: "100 px"
