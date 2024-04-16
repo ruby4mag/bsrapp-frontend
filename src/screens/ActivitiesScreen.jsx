@@ -1,6 +1,7 @@
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 import DataTable from 'react-data-table-component';
 import moment from 'moment';
+import { useDisclosure } from '@chakra-ui/react'
 import {
     Heading,
     Link,
