@@ -62,6 +62,9 @@ export default function ActivitiesScreen() {
         },
     ];
 
+    const handleRow = (row) => {
+        console.log(row)
+    }
 
 
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -84,6 +87,7 @@ export default function ActivitiesScreen() {
                     data={userActivities}
                     pagination
                     highlightOnHover
+                    onRowClicked={handleRow(row)}
                 />
             </Box>
 
