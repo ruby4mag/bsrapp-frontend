@@ -13,8 +13,7 @@ import {
     ModalHeader,
     ModalContent,
     ModalCloseButton,
-    ModalFooter,
-    Lorem
+    ModalFooter
 } from '@chakra-ui/react'
 import { useRef } from 'react';
 
@@ -98,7 +97,7 @@ export default function ActivitiesScreen() {
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <Lorem count={2} />
+                        dsadadsadadasdasdasd
                     </ModalBody>
 
                     <ModalFooter>
