@@ -65,6 +65,27 @@ export default function ActivitiesScreen() {
     const handleRow = (row, e) => {
         onOpen = true
         console.log(row, e)
+        return (
+            <>
+                <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent>
+                        <ModalHeader>Modal Title</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>
+                            <Remote activity={act} />
+                        </ModalBody>
+
+                        <ModalFooter>
+                            <Button colorScheme='blue' mr={3} onClick={onClose}>
+                                Close
+                            </Button>
+                            <Button variant='ghost'>Secondary Action</Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </Modal>
+            </>
+        );
     }
 
 
