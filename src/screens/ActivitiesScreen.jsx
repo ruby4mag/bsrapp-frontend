@@ -5,7 +5,15 @@ import { useDisclosure } from '@chakra-ui/react'
 import {
     Heading,
     Link,
-    Box
+    Box,
+    Button,
+    Modal,
+    ModalBody,
+    ModalOverlay,
+    ModalHeader,
+    ModalContent,
+    ModalCloseButton,
+    ModalFooter
 } from '@chakra-ui/react'
 import { useRef } from 'react';
 
