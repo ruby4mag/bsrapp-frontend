@@ -84,7 +84,7 @@ export default function ActivitiesScreen() {
             return (
                 <Box>
                     {console.log("modal-lazy-render")}
-                    <Box>{content}</Box>
+                    <Box></Box>
                 </Box>
             );
 
@@ -127,7 +127,9 @@ export default function ActivitiesScreen() {
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <Content />
+                        <Content>
+                            {content}
+                        </Content>
                     </ModalBody>
 
                     <ModalFooter>
