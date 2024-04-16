@@ -1,8 +1,8 @@
 import { useGetUserActivityQuery } from '../slices/activityApiSlice'
 import DataTable from 'react-data-table-component';
-import { Remote } from '../components/Remote'
+import Remote from '../components/Remote';
 import moment from 'moment';
-import { useDisclosure } from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react';
 import {
     Heading,
     Link,
