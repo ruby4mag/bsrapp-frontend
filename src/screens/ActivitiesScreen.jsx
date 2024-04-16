@@ -103,9 +103,7 @@ export default function ActivitiesScreen() {
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <Content>
-                            <Remote />
-                        </Content>
+                        <Remote />
                     </ModalBody>
 
                     <ModalFooter>
