@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import { axios } from 'axios';
+
 export default function Remote(activity) {
 
     const [content, setContent] = useState("Initial")
@@ -16,8 +18,6 @@ export default function Remote(activity) {
                 console.log(error);
             });
     }, [])
-
-
 
 
     return (
