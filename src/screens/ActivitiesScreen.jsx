@@ -73,10 +73,10 @@ export default function ActivitiesScreen() {
     })
     console.log(userActivities)
 
-    const Content = async () => {
+    const Content = () => {
 
         try {
-            const res = await axios.get(`${BACKEND_URL}/api/activities/getActivitycalories`, {
+            const res = axios.get(`${BACKEND_URL}/api/activities/getActivitycalories`, {
                 withCredentials: true
             })
             setContent = res.data.values.toString()
