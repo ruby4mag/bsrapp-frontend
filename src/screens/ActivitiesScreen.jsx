@@ -117,9 +117,9 @@ export default function ActivitiesScreen() {
                 Some other content that'll receive focus on close.
             </Box>
 
-            <Button mt={4} onClick={onOpen}>
+            {/* <Button mt={4} onClick={onOpen}>
                 Open Modal
-            </Button>
+            </Button> */}
             <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
