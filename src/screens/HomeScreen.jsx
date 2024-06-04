@@ -469,7 +469,7 @@ export default function HomeScreen() {
                     cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
                     rowHeight={300}
                     isResizable={true}
-                    resizeHandles={["se"]}
+                    //resizeHandles={["se"]}
                     resizeHandle={<BottomRightHandle />}
                     width={1000}>
                     <GridItemWrapper key="blue-eyes-dragon">
