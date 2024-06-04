@@ -456,7 +456,11 @@ export default function HomeScreen() {
             </Card>
             <ToastContainer />
 
-            <GridLayout layout={layout} cols={5} rowHeight={300} width={1000}>
+            <GridLayout layouts={{ lg: layout }}
+                breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+                cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
+                rowHeight={300}
+                width={1000}>
                 <GridItemWrapper key="blue-eyes-dragon">
                     <GridItemContent>Blue Eyes Dragon</GridItemContent>
                 </GridItemWrapper>
