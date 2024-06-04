@@ -478,7 +478,7 @@ export default function HomeScreen() {
                         <GridItemContent>Spell Caster</GridItemContent>
                     </GridItemWrapper>
                     <GridItemWrapper key="summoned-skull">
-                        <GridItemContent>Summoned Skull</GridItemContent>
+                        <GridItemContent><Bar options={activityYearHistoryOptions} data={data} /></GridItemContent>
                     </GridItemWrapper>
                 </ResponsiveGridLayout>
             </Root>
