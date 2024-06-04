@@ -420,7 +420,7 @@ export default function HomeScreen() {
 
     return (
         <>
-            <Root>
+            <div>
                 <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"}>
                     <CardHeader>
                         <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
@@ -482,7 +482,7 @@ export default function HomeScreen() {
                         <GridItemContent><Bar options={activityYearHistoryOptions} data={data} /></GridItemContent>
                     </GridItemWrapper>
                 </ResponsiveGridLayout>
-            </Root>
+            </div>
         </>
     )
 }
