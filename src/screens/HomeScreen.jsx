@@ -12,6 +12,10 @@ import "../styles/table.css";
 import GridLayout from "react-grid-layout";
 import styled from "styled-components";
 
+
+import { Responsive, WidthProvider } from "react-grid-layout";
+const ResponsiveGridLayout = WidthProvider(Responsive);
+
 const layout = [
     { i: "blue-eyes-dragon", x: 0, y: 0, w: 1, h: 1 },
     { i: "dark-magician", x: 1, y: 0, w: 1, h: 1 },
@@ -455,28 +459,29 @@ export default function HomeScreen() {
                 </SimpleGrid>
             </Card>
             <ToastContainer />
-
-            <GridLayout layouts={{ lg: layout }}
-                breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-                cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
-                rowHeight={300}
-                width={1000}>
-                <GridItemWrapper key="blue-eyes-dragon">
-                    <GridItemContent>Blue Eyes Dragon</GridItemContent>
-                </GridItemWrapper>
-                <GridItemWrapper key="dark-magician">
-                    <GridItemContent>Dark Magician</GridItemContent>
-                </GridItemWrapper>
-                <GridItemWrapper key="kuriboh">
-                    <GridItemContent>Kuriboh</GridItemContent>
-                </GridItemWrapper>
-                <GridItemWrapper key="spell-caster">
-                    <GridItemContent>Spell Caster</GridItemContent>
-                </GridItemWrapper>
-                <GridItemWrapper key="summoned-skull">
-                    <GridItemContent>Summoned Skull</GridItemContent>
-                </GridItemWrapper>
-            </GridLayout>
+            <Root>
+                <ResponsiveGridLayout layouts={{ lg: layout }}
+                    breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+                    cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
+                    rowHeight={300}
+                    width={1000}>
+                    <GridItemWrapper key="blue-eyes-dragon">
+                        <GridItemContent>Blue Eyes Dragon</GridItemContent>
+                    </GridItemWrapper>
+                    <GridItemWrapper key="dark-magician">
+                        <GridItemContent>Dark Magician</GridItemContent>
+                    </GridItemWrapper>
+                    <GridItemWrapper key="kuriboh">
+                        <GridItemContent>Kuriboh</GridItemContent>
+                    </GridItemWrapper>
+                    <GridItemWrapper key="spell-caster">
+                        <GridItemContent>Spell Caster</GridItemContent>
+                    </GridItemWrapper>
+                    <GridItemWrapper key="summoned-skull">
+                        <GridItemContent>Summoned Skull</GridItemContent>
+                    </GridItemWrapper>
+                </ResponsiveGridLayout>
+            </Root>
         </>
     )
 }
