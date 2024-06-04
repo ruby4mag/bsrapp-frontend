@@ -4,12 +4,11 @@ import { useEffect, useState } from 'react'
 import axios from "axios"
 import { BACKEND_URL } from '../constants'
 import { useDispatch } from 'react-redux'
-import { logout, setCredentials } from '../slices/userSlice'
-import { useLogoutMutation } from '../slices/userApiSlice'
+import { setCredentials } from '../slices/userSlice'
+
 import { useNavigate } from 'react-router-dom'
 import "../styles/table.css";
 
-import GridLayout from "react-grid-layout";
 import styled from "styled-components";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
@@ -40,23 +39,14 @@ const Root = styled.div`
 `;
 
 import {
-    Flex,
-    Input,
-    Button,
-    useColorModeValue,
+
     Box,
     Card,
     CardHeader,
     Heading,
-    Image,
-    Link,
-    Text,
-    Center,
-    useToast,
     Divider,
     SimpleGrid,
-    Grid, GridItem,
-    Link as ChakraLink
+
 } from "@chakra-ui/react";
 import {
     Chart as ChartJS,
