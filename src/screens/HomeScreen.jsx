@@ -314,7 +314,8 @@ export default function HomeScreen() {
     const getUser = async () => {
         try {
             const res = await axios.get(`${BACKEND_URL}/auth/login/success`, {
-                withCredentials: true
+                withCredentials: true,
+                withXSRFToken: true
             })
             dispatch(setCredentials({ name: res.data.name, email: res.data.email, _id: res.data._id, isAdmin: res.data.isAdmin }))
         } catch (err) {

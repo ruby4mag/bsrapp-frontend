@@ -64,10 +64,10 @@ export default function ActivitiesScreen() {
 
     const handleRow = (row, e) => {
         console.log(row, e)
-        isOpen = true
+        isOpen1 = true
         return (
             <>
-                <Modal finalFocusRef={finalRef} isOpen={isOpen} onClose={onClose}>
+                <Modal finalFocusRef={finalRef} isOpen={isOpen1} onClose={onClose}>
                     <ModalOverlay />
                     <ModalContent>
                         <ModalHeader>Modal Title</ModalHeader>
