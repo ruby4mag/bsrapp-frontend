@@ -53,7 +53,7 @@ const getLayouts1 = () => {
 
 
 const GridItemWrapper = styled.div`
-  background: #f5f5f5;
+  background: #043655;
 `;
 
 const GridItemContent = styled.div`
@@ -460,6 +460,7 @@ export default function HomeScreen() {
         <>
             <div>
 
+
                 <ToastContainer />
 
                 <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
@@ -479,8 +480,8 @@ export default function HomeScreen() {
 
 
 
-                        <GridItemWrapper key="blue-eyes-dragon">
-                            <GridItemContent>
+                        <GridItemWrapper key="blue-eyes-dragon" bg={"#0a13351c"}>
+                            <GridItemContent bg={"#0a13351c"}>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                             </GridItemContent>
                         </GridItemWrapper>
