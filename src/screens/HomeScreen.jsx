@@ -53,7 +53,7 @@ const getLayouts1 = () => {
 
 
 const GridItemWrapper = styled.div`
-  background: #043655;
+  background: #f5f5f5;
 `;
 
 const GridItemContent = styled.div`
@@ -459,11 +459,47 @@ export default function HomeScreen() {
     return (
         <>
             <div>
-
-
-                <ToastContainer />
+                <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"}>
+                    <CardHeader>
+                        <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
+                    </CardHeader>
+                    <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
+                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} />
+                        </Box>
+                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} />
+                        </Box>
+                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px' color={"white"}>
+                            Longest distances
+                            <Divider mt="20px" />
+                            <table >
+                                <tbody>
+                                    {Object.keys(activityMax).map((key) => {
+                                        return (
+                                            <tr key={key}>
+                                                <th style={{ color: 'white' }}>{key}</th>
+                                                <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
+                                            </tr>
+                                        )
+                                    })}
+                                </tbody>
+                            </table>
+                        </Box>
+                    </SimpleGrid>
+                </Card>
 
                 <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
+                    <CardHeader>
+                        <Heading color={"#4a9acb"} size='md'>Monthly Statistics</Heading>
+                    </CardHeader>
+                    <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
+                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box>
+                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={rundistanceoptions} data={rundistancedata} /></Box>
+                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={caloriesoptions} data={caloriesdata} /></Box>
+                    </SimpleGrid>
+                </Card>
+                <ToastContainer />
+
+                {/* <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                     <CardHeader>
                         <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
                     </CardHeader>
@@ -480,8 +516,8 @@ export default function HomeScreen() {
 
 
 
-                        <GridItemWrapper key="blue-eyes-dragon" bg={"#0a13351c"}>
-                            <GridItemContent bg={"#0a13351c"}>
+                        <GridItemWrapper key="blue-eyes-dragon">
+                            <GridItemContent>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                             </GridItemContent>
                         </GridItemWrapper>
@@ -494,21 +530,21 @@ export default function HomeScreen() {
                         <GridItemWrapper key="kuriboh">
                             <GridItemContent>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px' color={"white"}>
-                                    Longest distances
-                                    <Divider mt="20px" />
-                                    <table >
-                                        <tbody>
-                                            {Object.keys(activityMax).map((key) => {
-                                                return (
-                                                    <tr key={key}>
-                                                        <th style={{ color: 'white' }}>{key}</th>
-                                                        <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
-                                                    </tr>
-                                                )
-                                            })}
-                                        </tbody>
-                                    </table>
-                                </Box>
+                            Longest distances
+                            <Divider mt="20px" />
+                            <table >
+                                <tbody>
+                                    {Object.keys(activityMax).map((key) => {
+                                        return (
+                                            <tr key={key}>
+                                                <th style={{ color: 'white' }}>{key}</th>
+                                                <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
+                                            </tr>
+                                        )
+                                    })}
+                                </tbody>
+                            </table>
+                        </Box>
                             </GridItemContent>
                         </GridItemWrapper>
 
@@ -544,7 +580,7 @@ export default function HomeScreen() {
                         </GridItemWrapper>
 
                     </ResponsiveGridLayout>
-                </Card>
+                </Card> */}
             </div>
         </>
     )
