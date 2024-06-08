@@ -12,7 +12,6 @@ import "../styles/table.css";
 import styled from "styled-components";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
-import BottomRightHandle from "../components/CustomResizeHandle";
 
 import { Responsive, WidthProvider } from "react-grid-layout";
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -25,6 +24,33 @@ const layout = [
     { i: "spell-caster", x: 3, y: 0, w: 1, h: 1 },
     { i: "summoned-skull", x: 4, y: 0, w: 1, h: 1 }
 ];
+
+const layout1 = [
+    { i: "blue-eyes-dragon1", x: 0, y: 0, w: 1, h: 1 },
+    { i: "dark-magician1", x: 1, y: 0, w: 1, h: 1 },
+    { i: "kuriboh1", x: 2, y: 0, w: 4, h: 1 },
+    { i: "spell-caster", x: 3, y: 0, w: 1, h: 1 },
+    { i: "summoned-skull", x: 4, y: 0, w: 1, h: 1 }
+];
+
+const getLayouts = () => {
+    const savedLayouts = localStorage.getItem("grid-layout");
+    console.log(JSON.parse(savedLayouts))
+
+    return savedLayouts ? JSON.parse(savedLayouts) : { lg: layout };
+};
+
+const getLayouts1 = () => {
+    const savedLayouts1 = localStorage.getItem("grid-layout1");
+    console.log(JSON.parse(savedLayouts1))
+
+    return savedLayouts1 ? JSON.parse(savedLayouts1) : { lg: layout1 };
+};
+
+
+
+
+
 
 const GridItemWrapper = styled.div`
   background: #f5f5f5;
@@ -59,8 +85,10 @@ import {
     Title,
     Tooltip,
     Legend,
+    elements,
 } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
+import { log } from 'jsonlogic/lib/cblib'
 
 // Google map
 
@@ -402,6 +430,8 @@ export default function HomeScreen() {
         }
     }
 
+    const [s, setS] = useState(getLayouts())
+    const [s1, setS1] = useState(getLayouts1())
     useEffect(() => {
         getUser()
         getActivityRideDistance()
@@ -410,7 +440,21 @@ export default function HomeScreen() {
         getActivityDistanceYear()
         getActivityTotals()
         getActivitymax()
+        setS(getLayouts())
     }, [])
+
+
+
+    const handleLayoutChange = (layout, layouts) => {
+        localStorage.setItem("grid-layout", JSON.stringify(layouts));
+    };
+
+    const handleLayoutChange1 = (layout, layouts1) => {
+        localStorage.setItem("grid-layout1", JSON.stringify(layouts1));
+    };
+
+
+
 
     return (
         <>
@@ -455,30 +499,88 @@ export default function HomeScreen() {
                 </Card>
                 <ToastContainer />
 
-                <ResponsiveGridLayout layouts={{ lg: layout }}
-                    breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
-                    cols={{ lg: 5, md: 4, sm: 3, xs: 2, xxs: 1 }}
-                    rowHeight={300}
-                    isResizable={true}
-                    //resizeHandles={["se"]}
-                    resizeHandle={<BottomRightHandle />}
-                    width={1000}>
-                    <GridItemWrapper key="blue-eyes-dragon">
-                        <GridItemContent>Blue Eyes Dragon</GridItemContent>
-                    </GridItemWrapper>
-                    <GridItemWrapper key="dark-magician">
-                        <GridItemContent>Dark Magician</GridItemContent>
-                    </GridItemWrapper>
-                    <GridItemWrapper key="kuriboh">
-                        <GridItemContent>Kuriboh</GridItemContent>
-                    </GridItemWrapper>
-                    <GridItemWrapper key="spell-caster">
-                        <GridItemContent>Spell Caster</GridItemContent>
-                    </GridItemWrapper>
-                    <GridItemWrapper key="summoned-skull">
-                        <GridItemContent><Bar options={activityYearHistoryOptions} data={data} /></GridItemContent>
-                    </GridItemWrapper>
-                </ResponsiveGridLayout>
+                <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
+                    <CardHeader>
+                        <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
+                    </CardHeader>
+                    <ResponsiveGridLayout
+                        layouts={s}
+                        className="layout"
+                        breakpoints={{ lg: 1200 }}
+                        cols={{ lg: 6 }}
+                        rowHeight={300}
+                        isResizable={true}
+                        resizeHandles={["se"]}
+                        onLayoutChange={handleLayoutChange}
+                        width={1000}>
+
+
+
+                        <GridItemWrapper key="blue-eyes-dragon">
+                            <GridItemContent>
+                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
+                            </GridItemContent>
+                        </GridItemWrapper>
+                        <GridItemWrapper key="dark-magician">
+                            <GridItemContent>
+                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
+                            </GridItemContent>
+                        </GridItemWrapper>
+
+                        <GridItemWrapper key="kuriboh">
+                            <GridItemContent>
+                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px' color={"white"}>
+                                    Longest distances
+                                    <Divider mt="20px" />
+                                    <table >
+                                        <tbody>
+                                            {Object.keys(activityMax).map((key) => {
+                                                return (
+                                                    <tr key={key}>
+                                                        <th style={{ color: 'white' }}>{key}</th>
+                                                        <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
+                                                    </tr>
+                                                )
+                                            })}
+                                        </tbody>
+                                    </table>
+                                </Box>
+                            </GridItemContent>
+                        </GridItemWrapper>
+
+                    </ResponsiveGridLayout>
+                </Card>
+
+                <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
+                    <CardHeader>
+                        <Heading color={"#4a9acb"} size='md'>Monthly Statistics</Heading>
+                    </CardHeader>
+                    <ResponsiveGridLayout
+                        layouts={s1}
+                        className="layout"
+                        breakpoints={{ lg: 1200 }}
+                        cols={{ lg: 6 }}
+                        rowHeight={300}
+                        isResizable={true}
+                        resizeHandles={["se"]}
+                        onLayoutChange={handleLayoutChange1}
+                        width={1000}>
+
+
+
+                        <GridItemWrapper key="blue-eyes-dragon1">
+                            <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
+                        </GridItemWrapper>
+                        <GridItemWrapper key="dark-magician1">
+                            <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
+                        </GridItemWrapper>
+
+                        <GridItemWrapper key="kuriboh1">
+                            <GridItemContent><Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={caloriesoptions} data={caloriesdata} /></Box></GridItemContent>
+                        </GridItemWrapper>
+
+                    </ResponsiveGridLayout>
+                </Card>
             </div>
         </>
     )
