@@ -53,7 +53,7 @@ const getLayouts1 = () => {
 
 
 const GridItemWrapper = styled.div`
-  background: #f5f5f5;
+  background: #275d778a;
 `;
 
 const GridItemContent = styled.div`
@@ -459,7 +459,7 @@ export default function HomeScreen() {
     return (
         <>
             <div>
-                <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"}>
+                {/* <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"}>
                     <CardHeader>
                         <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
                     </CardHeader>
@@ -496,18 +496,18 @@ export default function HomeScreen() {
                         <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={rundistanceoptions} data={rundistancedata} /></Box>
                         <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={caloriesoptions} data={caloriesdata} /></Box>
                     </SimpleGrid>
-                </Card>
+                </Card> */}
                 <ToastContainer />
 
-                {/* <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
+                <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                     <CardHeader>
                         <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
                     </CardHeader>
                     <ResponsiveGridLayout
                         layouts={s}
                         className="layout"
-                        breakpoints={{ lg: 1200 }}
-                        cols={{ lg: 6 }}
+                        breakpoints={{ lg: 1200, md: 100 }}
+                        cols={{ lg: 6, md: 1 }}
                         rowHeight={300}
                         isResizable={true}
                         resizeHandles={["se"]}
@@ -530,21 +530,21 @@ export default function HomeScreen() {
                         <GridItemWrapper key="kuriboh">
                             <GridItemContent>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px' color={"white"}>
-                            Longest distances
-                            <Divider mt="20px" />
-                            <table >
-                                <tbody>
-                                    {Object.keys(activityMax).map((key) => {
-                                        return (
-                                            <tr key={key}>
-                                                <th style={{ color: 'white' }}>{key}</th>
-                                                <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
-                            </table>
-                        </Box>
+                                    Longest distances
+                                    <Divider mt="20px" />
+                                    <table >
+                                        <tbody>
+                                            {Object.keys(activityMax).map((key) => {
+                                                return (
+                                                    <tr key={key}>
+                                                        <th style={{ color: 'white' }}>{key}</th>
+                                                        <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
+                                                    </tr>
+                                                )
+                                            })}
+                                        </tbody>
+                                    </table>
+                                </Box>
                             </GridItemContent>
                         </GridItemWrapper>
 
@@ -558,8 +558,8 @@ export default function HomeScreen() {
                     <ResponsiveGridLayout
                         layouts={s1}
                         className="layout"
-                        breakpoints={{ lg: 1200 }}
-                        cols={{ lg: 6 }}
+                        breakpoints={{ lg: 1200, md: 100 }}
+                        cols={{ lg: 6, md: 1 }}
                         rowHeight={300}
                         isResizable={true}
                         resizeHandles={["se"]}
@@ -580,7 +580,7 @@ export default function HomeScreen() {
                         </GridItemWrapper>
 
                     </ResponsiveGridLayout>
-                </Card> */}
+                </Card>
             </div>
         </>
     )
