@@ -12,10 +12,13 @@ import "../styles/table.css";
 import styled from "styled-components";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
+import { CdsModal, CdsModalActions, CdsModalContent, CdsModalHeader } from '@cds/react/modal';
+import { CdsButton } from '@cds/react/button'
 
 import { Responsive, WidthProvider } from "react-grid-layout";
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
+var initial = true
 
 const layout = [
     { i: "blue-eyes-dragon", x: 0, y: 0, w: 1, h: 1 },
@@ -36,7 +39,7 @@ const layout1 = [
 const getLayouts = () => {
     const savedLayouts = localStorage.getItem("grid-layout");
     console.log(JSON.parse(savedLayouts))
-
+    initial = false;
     return savedLayouts ? JSON.parse(savedLayouts) : { lg: layout };
 };
 
@@ -440,8 +443,10 @@ export default function HomeScreen() {
         getActivityDistanceYear()
         getActivityTotals()
         getActivitymax()
-        setS(getLayouts())
+        //setS(getLayouts())
     }, [])
+
+
 
 
 
@@ -512,24 +517,25 @@ export default function HomeScreen() {
                         isResizable={true}
                         resizeHandles={["se"]}
                         onLayoutChange={handleLayoutChange}
-                        width={1000}>
+                    //width={1000}
+                    >
 
 
 
                         <GridItemWrapper key="blue-eyes-dragon">
                             <GridItemContent>
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
+                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                             </GridItemContent>
                         </GridItemWrapper>
                         <GridItemWrapper key="dark-magician">
                             <GridItemContent>
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
+                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
                             </GridItemContent>
                         </GridItemWrapper>
 
                         <GridItemWrapper key="kuriboh">
                             <GridItemContent>
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px' color={"white"}>
+                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
                                     Longest distances
                                     <Divider mt="20px" />
                                     <table >
@@ -568,20 +574,39 @@ export default function HomeScreen() {
 
 
 
-                        <GridItemWrapper key="blue-eyes-dragon1">
-                            <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
+                        <GridItemWrapper key="blue-eyes-dragon1" >
+                            <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
                         </GridItemWrapper>
                         <GridItemWrapper key="dark-magician1">
-                            <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
+                            <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
                         </GridItemWrapper>
 
                         <GridItemWrapper key="kuriboh1">
-                            <GridItemContent><Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={caloriesoptions} data={caloriesdata} /></Box></GridItemContent>
+                            <GridItemContent><Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={caloriesoptions} data={caloriesdata} /></Box></GridItemContent>
                         </GridItemWrapper>
 
                     </ResponsiveGridLayout>
                 </Card>
             </div>
+
+            {/* <CdsModal >
+                <CdsModalHeader>
+                    <h3 cds-text="title">My Modal</h3>
+                </CdsModalHeader>
+                <CdsModalContent>
+                    <div cds-layout="vertical gap:md p-y:xs">
+                        <p cds-text="body">Lorem Ipsum</p>
+                    </div>
+                </CdsModalContent>
+                <CdsModalActions>
+                    <div cds-layout="horizontal gap:sm align:right">
+                        <CdsButton >
+                            Cancel
+                        </CdsButton>
+                        <CdsButton >Ok</CdsButton>
+                    </div>
+                </CdsModalActions>
+            </CdsModal>; */}
         </>
     )
 }

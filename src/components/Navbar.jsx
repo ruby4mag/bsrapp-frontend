@@ -7,6 +7,7 @@ import { logout } from '../slices/userSlice'
 import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons'
 import axios from "axios"
 import { BACKEND_URL } from '../constants'
+import bsrlogo1 from '../assets/bsr-logo.png'
 import {
     Flex, Spacer, HStack, Button, Text, Menu, MenuButton, MenuList, MenuItem, Box, Heading, ButtonGroup, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, DrawerFooter, useDisclosure, Input, Icon, Divider, VStack, AlertDialog,
     AlertDialogBody,
@@ -73,7 +74,7 @@ const Navbar = () => {
             </Flex>
             <Flex minWidth='max-content' alignItems='center' gap='2' justify={"center"} bg={"#03314d"} h={"60px"}>
                 <Box pl='10px' color={"white"} fontSize={30}>
-                    <Link to="/">BSR Sport</Link>
+                    <Link to="/"><img src={bsrlogo1} alt="bsrlogo" width={200} /></Link>
                 </Box>
                 <Spacer />
                 <Box display={{ base: "none", md: "flex" }} >
