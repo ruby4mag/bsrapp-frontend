@@ -94,7 +94,7 @@ import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import { log } from 'jsonlogic/lib/cblib'
 
 // Google map
-
+//dads
 
 
 ChartJS.register(
