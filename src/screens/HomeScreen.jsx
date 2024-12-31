@@ -627,7 +627,7 @@ export default function HomeScreen() {
                 </Card>
             </div>
 
-            <QueryBuilder
+            {/* <QueryBuilder
                 fields={fields}
                 query={query}
                 onQueryChange={onQueryChange}
@@ -635,7 +635,7 @@ export default function HomeScreen() {
             <div>
                 <h3>Query JSON:</h3>
                 <pre>{JSON.stringify(query, null, 2)}</pre>
-            </div>
+            </div> */}
 
 
             {/* <CdsModal >
