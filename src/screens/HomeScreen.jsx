@@ -487,19 +487,19 @@ export default function HomeScreen() {
                         >
 
                             <GridItemWrapper key="blue-eyes-dragon">
-                                <GridItemContent isDraggable={checked}>
+                                <GridItemContent>
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                                 </GridItemContent>
                             </GridItemWrapper>
                             <GridItemWrapper key="dark-magician">
-                                <GridItemContent isDraggable={checked}>
+                                <GridItemContent >
 
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
                                 </GridItemContent>
                             </GridItemWrapper>
 
                             <GridItemWrapper key="kuriboh">
-                                <GridItemContent isDraggable={checked}>
+                                <GridItemContent >
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
                                         Longest distances
                                         <Divider mt="20px" />
@@ -581,19 +581,19 @@ export default function HomeScreen() {
                         >
 
                             <GridItemWrapper key="blue-eyes-dragon">
-                                <GridItemContent isDraggable={checked}>
+                                <GridItemContent>
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                                 </GridItemContent>
                             </GridItemWrapper>
                             <GridItemWrapper key="dark-magician">
-                                <GridItemContent isDraggable={checked}>
+                                <GridItemContent >
 
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
                                 </GridItemContent>
                             </GridItemWrapper>
 
                             <GridItemWrapper key="kuriboh">
-                                <GridItemContent isDraggable={checked}>
+                                <GridItemContent >
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
                                         Longest distances
                                         <Divider mt="20px" />
