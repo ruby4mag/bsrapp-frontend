@@ -8,7 +8,7 @@ import { setCredentials } from '../slices/userSlice'
 
 import { useNavigate } from 'react-router-dom'
 import "../styles/table.css";
-import { Switch } from '@chakra-ui/react'
+import { Switch } from '@chakra-ui/switch'
 
 import styled from "styled-components";
 import "react-grid-layout/css/styles.css";
