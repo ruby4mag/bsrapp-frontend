@@ -487,7 +487,6 @@ export default function HomeScreen() {
                     //width={1000}
                     >
 
-                        <Switch checked={checked} onCheckedChange={(e) => setChecked(e.checked)} colorScheme='green' id='email-alerts'>Label</Switch>
                         <Switch colorScheme='red' size='lg' />
 
                         <GridItemWrapper key="blue-eyes-dragon">
