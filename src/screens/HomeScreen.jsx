@@ -466,7 +466,7 @@ export default function HomeScreen() {
     return (
         <>
             <div>
-
+                <Switch colorScheme='red' size='lg' />
                 <ToastContainer />
 
                 <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
