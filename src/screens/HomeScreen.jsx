@@ -553,7 +553,6 @@ export default function HomeScreen() {
                         cols={{ lg: 6, md: 1 }}
                         rowHeight={300}
                         isResizable={true}
-                        draggable={false}
                         resizeHandles={["se"]}
                         onLayoutChange={handleLayoutChange}
                     //width={1000}
@@ -606,7 +605,7 @@ export default function HomeScreen() {
                         breakpoints={{ lg: 1200, md: 100 }}
                         cols={{ lg: 6, md: 1 }}
                         rowHeight={300}
-                        isResizable={false}
+                        isResizable={true}
                         resizeHandles={["se"]}
                         onLayoutChange={handleLayoutChange1}
                         width={1000}>
