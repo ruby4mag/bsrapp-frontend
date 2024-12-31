@@ -16,31 +16,6 @@ import { CdsModal, CdsModalActions, CdsModalContent, CdsModalHeader } from '@cds
 import { CdsButton } from '@cds/react/button'
 
 
-// ******************************************************
-import 'react-querybuilder/dist/query-builder.css';
-import { QueryBuilder } from 'react-querybuilder';
-
-const fields = [
-    { name: 'name', label: 'Name', type: 'string' },
-    { name: 'age', label: 'Age', type: 'number' },
-    { name: 'city', label: 'City', type: 'string' },
-];
-
-const initialQuery = {
-    "condition": "AND",
-    "rules": [
-        {
-            "id": "d2c7570d-097b-436d-aa2e-926ccbfb0a25",
-            "field": "name",
-            "operator": "=",
-            "valueSource": "value",
-            "value": "John Kurain",
-            "type": "string"
-        }
-    ],
-    "id": "d89895c0-5153-4192-9907-3dfce7d3b79a"
-};
-// ******************************************************
 
 import { Responsive, WidthProvider } from "react-grid-layout";
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -118,10 +93,8 @@ import {
     elements,
 } from 'chart.js';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
-import { log } from 'jsonlogic/lib/cblib'
 
-// Google map
-//dads
+
 
 
 ChartJS.register(
@@ -481,7 +454,6 @@ export default function HomeScreen() {
         getActivityDistanceYear()
         getActivityTotals()
         getActivitymax()
-        //setS(getLayouts())
     }, [])
 
 
@@ -516,9 +488,9 @@ export default function HomeScreen() {
                         cols={{ lg: 6, md: 1 }}
                         rowHeight={300}
                         isResizable={true}
-                        draggable={false}
                         resizeHandles={["se"]}
                         onLayoutChange={handleLayoutChange}
+                        isDraggable={false}
                         draggableHandle=".drag-handle"
                     //width={1000}
                     >
@@ -534,7 +506,7 @@ export default function HomeScreen() {
                         <GridItemWrapper key="dark-magician">
                             <GridItemContent>
 
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><div className="drag-handle">Drag</div><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
+                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
                             </GridItemContent>
                         </GridItemWrapper>
 
@@ -594,36 +566,6 @@ export default function HomeScreen() {
                     </ResponsiveGridLayout>
                 </Card>
             </div>
-
-            {/* <QueryBuilder
-                fields={fields}
-                query={query}
-                onQueryChange={onQueryChange}
-            />
-            <div>
-                <h3>Query JSON:</h3>
-                <pre>{JSON.stringify(query, null, 2)}</pre>
-            </div> */}
-
-
-            {/* <CdsModal >
-                <CdsModalHeader>
-                    <h3 cds-text="title">My Modal</h3>
-                </CdsModalHeader>
-                <CdsModalContent>
-                    <div cds-layout="vertical gap:md p-y:xs">
-                        <p cds-text="body">Lorem Ipsum</p>
-                    </div>
-                </CdsModalContent>
-                <CdsModalActions>
-                    <div cds-layout="horizontal gap:sm align:right">
-                        <CdsButton >
-                            Cancel
-                        </CdsButton>
-                        <CdsButton >Ok</CdsButton>
-                    </div>
-                </CdsModalActions>
-            </CdsModal>; */}
         </>
     )
 }
