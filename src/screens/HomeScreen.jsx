@@ -502,44 +502,7 @@ export default function HomeScreen() {
     return (
         <>
             <div>
-                {/* <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"}>
-                    <CardHeader>
-                        <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
-                    </CardHeader>
-                    <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
-                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Bar options={activityYearHistoryOptions} data={data} />
-                        </Box>
-                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Doughnut data={doughnutdata} options={doughnutoptions} />
-                        </Box>
-                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px' color={"white"}>
-                            Longest distances
-                            <Divider mt="20px" />
-                            <table >
-                                <tbody>
-                                    {Object.keys(activityMax).map((key) => {
-                                        return (
-                                            <tr key={key}>
-                                                <th style={{ color: 'white' }}>{key}</th>
-                                                <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
-                            </table>
-                        </Box>
-                    </SimpleGrid>
-                </Card>
 
-                <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
-                    <CardHeader>
-                        <Heading color={"#4a9acb"} size='md'>Monthly Statistics</Heading>
-                    </CardHeader>
-                    <SimpleGrid columns={[1, 1, 3]} spacing='40px' >
-                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box>
-                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={rundistanceoptions} data={rundistancedata} /></Box>
-                        <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='250px'><Line options={caloriesoptions} data={caloriesdata} /></Box>
-                    </SimpleGrid>
-                </Card> */}
                 <ToastContainer />
 
                 <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
@@ -556,7 +519,7 @@ export default function HomeScreen() {
                         draggable={false}
                         resizeHandles={["se"]}
                         onLayoutChange={handleLayoutChange}
-                        draggableHandle='Drag'
+                        draggableHandle=".drag-handle"
                     //width={1000}
                     >
 
@@ -564,6 +527,7 @@ export default function HomeScreen() {
 
                         <GridItemWrapper key="blue-eyes-dragon">
                             <GridItemContent>
+                                <div className="drag-handle">Drag</div>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                             </GridItemContent>
                         </GridItemWrapper>
