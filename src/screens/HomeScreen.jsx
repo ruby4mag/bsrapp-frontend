@@ -553,6 +553,7 @@ export default function HomeScreen() {
                         cols={{ lg: 6, md: 1 }}
                         rowHeight={300}
                         isResizable={true}
+                        draggable={false}
                         resizeHandles={["se"]}
                         onLayoutChange={handleLayoutChange}
                     //width={1000}
