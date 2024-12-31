@@ -490,7 +490,6 @@ export default function HomeScreen() {
 
                         <GridItemWrapper key="blue-eyes-dragon">
                             <GridItemContent>
-                                <div className="drag-handle">Drag</div>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                             </GridItemContent>
                         </GridItemWrapper>
@@ -503,7 +502,6 @@ export default function HomeScreen() {
 
                         <GridItemWrapper key="kuriboh">
                             <GridItemContent>
-                                <div className="drag-handle">Drag</div>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
                                     Longest distances
                                     <Divider mt="20px" />
