@@ -487,7 +487,7 @@ export default function HomeScreen() {
                         >
 
                             <GridItemWrapper key="blue-eyes-dragon">
-                                <GridItemContent >
+                                <GridItemContent isDraggable={true}>
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                                 </GridItemContent>
                             </GridItemWrapper>
@@ -541,7 +541,7 @@ export default function HomeScreen() {
 
 
                             <GridItemWrapper key="blue-eyes-dragon1" >
-                                <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
+                                <GridItemContent isDraggable={true}> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
                             </GridItemWrapper>
                             <GridItemWrapper key="dark-magician1">
                                 <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
@@ -582,19 +582,19 @@ export default function HomeScreen() {
                         >
 
                             <GridItemWrapper key="blue-eyes-dragon">
-                                <GridItemContent>
+                                <GridItemContent isDraggable={false}>
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                                 </GridItemContent>
                             </GridItemWrapper>
                             <GridItemWrapper key="dark-magician">
-                                <GridItemContent >
+                                <GridItemContent isDraggable={false}>
 
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
                                 </GridItemContent>
                             </GridItemWrapper>
 
                             <GridItemWrapper key="kuriboh">
-                                <GridItemContent >
+                                <GridItemContent isDraggable={false}>
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
                                         Longest distances
                                         <Divider mt="20px" />
@@ -636,14 +636,14 @@ export default function HomeScreen() {
 
 
                             <GridItemWrapper key="blue-eyes-dragon1" >
-                                <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
+                                <GridItemContent isDraggable={false}> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
                             </GridItemWrapper>
                             <GridItemWrapper key="dark-magician1">
-                                <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
+                                <GridItemContent isDraggable={false}> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
                             </GridItemWrapper>
 
                             <GridItemWrapper key="kuriboh1">
-                                <GridItemContent><Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={caloriesoptions} data={caloriesdata} /></Box></GridItemContent>
+                                <GridItemContent isDraggable={false}><Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={caloriesoptions} data={caloriesdata} /></Box></GridItemContent>
                             </GridItemWrapper>
 
                         </ResponsiveGridLayout>
