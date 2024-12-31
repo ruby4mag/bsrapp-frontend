@@ -471,7 +471,7 @@ export default function HomeScreen() {
                     the value is {String(checked)}
                     <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                         <CardHeader>
-                            <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
+                            <Heading color={"#4a9acb"} size='md'>Overall Statistics - checked </Heading>
                         </CardHeader>
                         <ResponsiveGridLayout
                             layouts={s}
@@ -482,12 +482,12 @@ export default function HomeScreen() {
                             isResizable={true}
                             resizeHandles={["se"]}
                             onLayoutChange={handleLayoutChange}
-                            isDraggable={checked}
+                            isDraggable={true}
                             draggableHandle=".drag-handle"
                         >
 
                             <GridItemWrapper key="blue-eyes-dragon">
-                                <GridItemContent>
+                                <GridItemContent >
                                     <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
                                 </GridItemContent>
                             </GridItemWrapper>
