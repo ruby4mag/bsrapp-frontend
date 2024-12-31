@@ -469,7 +469,7 @@ export default function HomeScreen() {
 
                 <ToastContainer />
                 <Switch colorScheme='red' size='lg' />
-                <Switch checked={checked} onChange={(e) => setChecked(e.checked)} />
+                <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
                 the value is {String(checked)}
                 <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                     <CardHeader>
