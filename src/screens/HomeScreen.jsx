@@ -535,6 +535,7 @@ export default function HomeScreen() {
                             isResizable={true}
                             resizeHandles={["se"]}
                             onLayoutChange={handleLayoutChange1}
+                            isDraggable={true}
                             width={1000}>
 
 
@@ -629,6 +630,7 @@ export default function HomeScreen() {
                             isResizable={true}
                             resizeHandles={["se"]}
                             onLayoutChange={handleLayoutChange1}
+                            isDraggable={false}
                             width={1000}>
 
 
