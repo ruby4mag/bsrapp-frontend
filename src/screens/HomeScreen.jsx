@@ -466,12 +466,13 @@ export default function HomeScreen() {
     return (
         <>
             <div>
-                <Switch colorScheme='red' size='lg' />
-                <ToastContainer />
 
+                <ToastContainer />
+                <Switch colorScheme='red' size='lg' />
                 <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                     <CardHeader>
                         <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
+                        <Switch colorScheme='red' size='lg' />
                     </CardHeader>
                     <ResponsiveGridLayout
                         layouts={s}
