@@ -467,8 +467,7 @@ export default function HomeScreen() {
                 <div>
 
                     <ToastContainer />
-                    <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
-                    Layout edit mode {String(checked)}
+                    Edit mode <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
                     <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                         <CardHeader>
                             <Heading color={"#4a9acb"} size='md'>Overall Statistics </Heading>
@@ -562,7 +561,6 @@ export default function HomeScreen() {
 
                     <ToastContainer />
                     Edit mode <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
-                    the value is {String(checked)}
                     <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                         <CardHeader>
                             <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
