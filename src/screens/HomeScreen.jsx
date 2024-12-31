@@ -486,7 +486,7 @@ export default function HomeScreen() {
                     //width={1000}
                     >
 
-
+                        <Switch>Label</Switch>
 
                         <GridItemWrapper key="blue-eyes-dragon">
                             <GridItemContent>

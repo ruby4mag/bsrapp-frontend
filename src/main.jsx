@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import { Switch } from "@/components/ui/switch"
 import App from './App.jsx'
 import './index.css'
 import HomeScreen from './screens/HomeScreen.jsx'
