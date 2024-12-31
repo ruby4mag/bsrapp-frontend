@@ -483,7 +483,6 @@ export default function HomeScreen() {
                             resizeHandles={["se"]}
                             onLayoutChange={handleLayoutChange}
                             isDraggable={true}
-                            draggableHandle=".drag-handle"
                         >
 
                             <GridItemWrapper key="blue-eyes-dragon">
@@ -562,7 +561,7 @@ export default function HomeScreen() {
                 <div>
 
                     <ToastContainer />
-                    <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
+                    Edit mode <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
                     the value is {String(checked)}
                     <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                         <CardHeader>
@@ -578,7 +577,6 @@ export default function HomeScreen() {
                             resizeHandles={["se"]}
                             onLayoutChange={handleLayoutChange}
                             isDraggable={false}
-                            draggableHandle=".drag-handle"
                         >
 
                             <GridItemWrapper key="blue-eyes-dragon">
