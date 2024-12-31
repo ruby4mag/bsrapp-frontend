@@ -556,6 +556,7 @@ export default function HomeScreen() {
                         draggable={false}
                         resizeHandles={["se"]}
                         onLayoutChange={handleLayoutChange}
+                        draggableHandle=".drag-handle"
                     //width={1000}
                     >
 
