@@ -467,7 +467,7 @@ export default function HomeScreen() {
                 <div>
 
                     <ToastContainer />
-                    <div style={{ color: 'white' }}>layout edit mode</div> <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
+                    <div style={{ color: 'white' }}>layout edit mode <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} /></div>
                     <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                         <CardHeader>
                             <Heading color={"#4a9acb"} size='md'>Overall Statistics </Heading>
@@ -560,7 +560,7 @@ export default function HomeScreen() {
                 <div>
 
                     <ToastContainer />
-                    <div style={{ color: 'white' }}>layout edit mode</div> <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
+                    <div style={{ color: 'white' }}>layout edit mode <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} /></div>
                     <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                         <CardHeader>
                             <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
