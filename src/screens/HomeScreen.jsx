@@ -533,12 +533,14 @@ export default function HomeScreen() {
                         </GridItemWrapper>
                         <GridItemWrapper key="dark-magician">
                             <GridItemContent>
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
+
+                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><div className="drag-handle">Drag</div><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
                             </GridItemContent>
                         </GridItemWrapper>
 
                         <GridItemWrapper key="kuriboh">
                             <GridItemContent>
+                                <div className="drag-handle">Drag</div>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
                                     Longest distances
                                     <Divider mt="20px" />
