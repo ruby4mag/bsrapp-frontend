@@ -8,6 +8,7 @@ import { setCredentials } from '../slices/userSlice'
 
 import { useNavigate } from 'react-router-dom'
 import "../styles/table.css";
+import { Switch } from "@/components/ui/switch"
 
 import styled from "styled-components";
 import "react-grid-layout/css/styles.css";
@@ -238,7 +239,7 @@ export default function HomeScreen() {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-
+    const [checked, setChecked] = useState(false)
     const [ridedistancelabels, setRidedistancelabels] = useState([])
     const [ridedistancechartvalues, setRidedistancechartvalues] = useState([])
 
@@ -486,7 +487,7 @@ export default function HomeScreen() {
                     //width={1000}
                     >
 
-                        <Switch>Label</Switch>
+                        <Switch checked={checked} onCheckedChange={(e) => setChecked(e.checked)}>Label</Switch>
 
                         <GridItemWrapper key="blue-eyes-dragon">
                             <GridItemContent>
