@@ -468,10 +468,10 @@ export default function HomeScreen() {
 
                     <ToastContainer />
                     <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
-                    the value is {String(checked)}
+                    Layout edit mode {String(checked)}
                     <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
                         <CardHeader>
-                            <Heading color={"#4a9acb"} size='md'>Overall Statistics - checked </Heading>
+                            <Heading color={"#4a9acb"} size='md'>Overall Statistics </Heading>
                         </CardHeader>
                         <ResponsiveGridLayout
                             layouts={s}
