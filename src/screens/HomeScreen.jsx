@@ -232,16 +232,7 @@ export const caloriesoptions = {
 
 export default function HomeScreen() {
 
-    const [query, setQuery] = useState(initialQuery);
 
-    const onQueryChange = (newQuery) => {
-        const updatedQuery = {
-            ...newQuery,
-            rules: newQuery.rules.map(rule => ({ ...rule, type: fields.find(field => field.name === rule.field)?.type }))
-
-        };
-        setQuery(updatedQuery);
-    };
 
 
 
