@@ -460,100 +460,194 @@ export default function HomeScreen() {
         localStorage.setItem("grid-layout1", JSON.stringify(layouts1));
     };
 
+    if (checked) {
+
+        return (
+            <>
+                <div>
+
+                    <ToastContainer />
+                    <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
+                    the value is {String(checked)}
+                    <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
+                        <CardHeader>
+                            <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
+                        </CardHeader>
+                        <ResponsiveGridLayout
+                            layouts={s}
+                            className="layout"
+                            breakpoints={{ lg: 1200, md: 100 }}
+                            cols={{ lg: 6, md: 1 }}
+                            rowHeight={300}
+                            isResizable={true}
+                            resizeHandles={["se"]}
+                            onLayoutChange={handleLayoutChange}
+                            isDraggable={checked}
+                            draggableHandle=".drag-handle"
+                        >
+
+                            <GridItemWrapper key="blue-eyes-dragon">
+                                <GridItemContent isDraggable={checked}>
+                                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
+                                </GridItemContent>
+                            </GridItemWrapper>
+                            <GridItemWrapper key="dark-magician">
+                                <GridItemContent isDraggable={checked}>
+
+                                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
+                                </GridItemContent>
+                            </GridItemWrapper>
+
+                            <GridItemWrapper key="kuriboh">
+                                <GridItemContent isDraggable={checked}>
+                                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
+                                        Longest distances
+                                        <Divider mt="20px" />
+                                        <table >
+                                            <tbody>
+                                                {Object.keys(activityMax).map((key) => {
+                                                    return (
+                                                        <tr key={key}>
+                                                            <th style={{ color: 'white' }}>{key}</th>
+                                                            <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
+                                                        </tr>
+                                                    )
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </Box>
+                                </GridItemContent>
+                            </GridItemWrapper>
+
+                        </ResponsiveGridLayout>
+                    </Card>
+
+                    <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
+                        <CardHeader>
+                            <Heading color={"#4a9acb"} size='md'>Monthly Statistics</Heading>
+                        </CardHeader>
+                        <ResponsiveGridLayout
+                            layouts={s1}
+                            className="layout"
+                            breakpoints={{ lg: 1200, md: 100 }}
+                            cols={{ lg: 6, md: 1 }}
+                            rowHeight={300}
+                            isResizable={true}
+                            resizeHandles={["se"]}
+                            onLayoutChange={handleLayoutChange1}
+                            width={1000}>
 
 
 
-    return (
-        <>
-            <div>
+                            <GridItemWrapper key="blue-eyes-dragon1" >
+                                <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
+                            </GridItemWrapper>
+                            <GridItemWrapper key="dark-magician1">
+                                <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
+                            </GridItemWrapper>
 
-                <ToastContainer />
-                <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
-                the value is {String(checked)}
-                <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
-                    <CardHeader>
-                        <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
-                    </CardHeader>
-                    <ResponsiveGridLayout
-                        layouts={s}
-                        className="layout"
-                        breakpoints={{ lg: 1200, md: 100 }}
-                        cols={{ lg: 6, md: 1 }}
-                        rowHeight={300}
-                        isResizable={true}
-                        resizeHandles={["se"]}
-                        onLayoutChange={handleLayoutChange}
-                        isDraggable={checked}
-                        draggableHandle=".drag-handle"
-                    >
+                            <GridItemWrapper key="kuriboh1">
+                                <GridItemContent><Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={caloriesoptions} data={caloriesdata} /></Box></GridItemContent>
+                            </GridItemWrapper>
 
-                        <GridItemWrapper key="blue-eyes-dragon">
-                            <GridItemContent isDraggable={checked}>
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
-                            </GridItemContent>
-                        </GridItemWrapper>
-                        <GridItemWrapper key="dark-magician">
-                            <GridItemContent isDraggable={checked}>
+                        </ResponsiveGridLayout>
+                    </Card>
+                </div>
+            </>
+        )
+    } else {
+        return (
+            <>
+                <div>
 
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
-                            </GridItemContent>
-                        </GridItemWrapper>
+                    <ToastContainer />
+                    <Switch checked={checked} onChange={(e) => setChecked(checked => !checked)} />
+                    the value is {String(checked)}
+                    <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
+                        <CardHeader>
+                            <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
+                        </CardHeader>
+                        <ResponsiveGridLayout
+                            layouts={s}
+                            className="layout"
+                            breakpoints={{ lg: 1200, md: 100 }}
+                            cols={{ lg: 6, md: 1 }}
+                            rowHeight={300}
+                            isResizable={true}
+                            resizeHandles={["se"]}
+                            onLayoutChange={handleLayoutChange}
+                            isDraggable={false}
+                            draggableHandle=".drag-handle"
+                        >
 
-                        <GridItemWrapper key="kuriboh">
-                            <GridItemContent isDraggable={checked}>
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
-                                    Longest distances
-                                    <Divider mt="20px" />
-                                    <table >
-                                        <tbody>
-                                            {Object.keys(activityMax).map((key) => {
-                                                return (
-                                                    <tr key={key}>
-                                                        <th style={{ color: 'white' }}>{key}</th>
-                                                        <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
-                                                    </tr>
-                                                )
-                                            })}
-                                        </tbody>
-                                    </table>
-                                </Box>
-                            </GridItemContent>
-                        </GridItemWrapper>
+                            <GridItemWrapper key="blue-eyes-dragon">
+                                <GridItemContent isDraggable={checked}>
+                                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
+                                </GridItemContent>
+                            </GridItemWrapper>
+                            <GridItemWrapper key="dark-magician">
+                                <GridItemContent isDraggable={checked}>
 
-                    </ResponsiveGridLayout>
-                </Card>
+                                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
+                                </GridItemContent>
+                            </GridItemWrapper>
 
-                <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
-                    <CardHeader>
-                        <Heading color={"#4a9acb"} size='md'>Monthly Statistics</Heading>
-                    </CardHeader>
-                    <ResponsiveGridLayout
-                        layouts={s1}
-                        className="layout"
-                        breakpoints={{ lg: 1200, md: 100 }}
-                        cols={{ lg: 6, md: 1 }}
-                        rowHeight={300}
-                        isResizable={true}
-                        resizeHandles={["se"]}
-                        onLayoutChange={handleLayoutChange1}
-                        width={1000}>
+                            <GridItemWrapper key="kuriboh">
+                                <GridItemContent isDraggable={checked}>
+                                    <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
+                                        Longest distances
+                                        <Divider mt="20px" />
+                                        <table >
+                                            <tbody>
+                                                {Object.keys(activityMax).map((key) => {
+                                                    return (
+                                                        <tr key={key}>
+                                                            <th style={{ color: 'white' }}>{key}</th>
+                                                            <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
+                                                        </tr>
+                                                    )
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </Box>
+                                </GridItemContent>
+                            </GridItemWrapper>
+
+                        </ResponsiveGridLayout>
+                    </Card>
+
+                    <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
+                        <CardHeader>
+                            <Heading color={"#4a9acb"} size='md'>Monthly Statistics</Heading>
+                        </CardHeader>
+                        <ResponsiveGridLayout
+                            layouts={s1}
+                            className="layout"
+                            breakpoints={{ lg: 1200, md: 100 }}
+                            cols={{ lg: 6, md: 1 }}
+                            rowHeight={300}
+                            isResizable={true}
+                            resizeHandles={["se"]}
+                            onLayoutChange={handleLayoutChange1}
+                            width={1000}>
 
 
 
-                        <GridItemWrapper key="blue-eyes-dragon1" >
-                            <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
-                        </GridItemWrapper>
-                        <GridItemWrapper key="dark-magician1">
-                            <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
-                        </GridItemWrapper>
+                            <GridItemWrapper key="blue-eyes-dragon1" >
+                                <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={ridedistanceoptions} data={ridedistancedata} /></Box></GridItemContent>
+                            </GridItemWrapper>
+                            <GridItemWrapper key="dark-magician1">
+                                <GridItemContent> <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={rundistanceoptions} data={rundistancedata} /></Box></GridItemContent>
+                            </GridItemWrapper>
 
-                        <GridItemWrapper key="kuriboh1">
-                            <GridItemContent><Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={caloriesoptions} data={caloriesdata} /></Box></GridItemContent>
-                        </GridItemWrapper>
+                            <GridItemWrapper key="kuriboh1">
+                                <GridItemContent><Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Line options={caloriesoptions} data={caloriesdata} /></Box></GridItemContent>
+                            </GridItemWrapper>
 
-                    </ResponsiveGridLayout>
-                </Card>
-            </div>
-        </>
-    )
+                        </ResponsiveGridLayout>
+                    </Card>
+                </div>
+            </>
+        )
+    }
 }
