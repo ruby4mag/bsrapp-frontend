@@ -475,7 +475,6 @@ export default function HomeScreen() {
                         <Heading color={"#4a9acb"} size='md'>Overall Statistics</Heading>
                         <Switch colorScheme='red' size='lg' />
                     </CardHeader>
-                    let content = 
                     <ResponsiveGridLayout
                         layouts={s}
                         className="layout"
@@ -488,7 +487,7 @@ export default function HomeScreen() {
                         isDraggable={checked}
                         draggableHandle=".drag-handle"
                     >
-                        
+
                         <GridItemWrapper key="blue-eyes-dragon">
                             <GridItemContent>
                                 <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
@@ -523,56 +522,6 @@ export default function HomeScreen() {
                         </GridItemWrapper>
 
                     </ResponsiveGridLayout>
-                    if (checked) {
-                        content =                     <ResponsiveGridLayout
-                        layouts={s}
-                        className="layout"
-                        breakpoints={{ lg: 1200, md: 100 }}
-                        cols={{ lg: 6, md: 1 }}
-                        rowHeight={300}
-                        isResizable={true}
-                        resizeHandles={["se"]}
-                        onLayoutChange={handleLayoutChange}
-                        isDraggable={checked}
-                        draggableHandle=".drag-handle"
-                    >
-                        
-                        <GridItemWrapper key="blue-eyes-dragon">
-                            <GridItemContent>
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Bar options={activityYearHistoryOptions} data={data} /></Box>
-                            </GridItemContent>
-                        </GridItemWrapper>
-                        <GridItemWrapper key="dark-magician">
-                            <GridItemContent>
-
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px'><Doughnut data={doughnutdata} options={doughnutoptions} /></Box>
-                            </GridItemContent>
-                        </GridItemWrapper>
-
-                        <GridItemWrapper key="kuriboh">
-                            <GridItemContent>
-                                <Box borderRadius={"10px"} p="20px" bg='rgb(6, 55, 84)' height='275px' color={"white"}>
-                                    Longest distances
-                                    <Divider mt="20px" />
-                                    <table >
-                                        <tbody>
-                                            {Object.keys(activityMax).map((key) => {
-                                                return (
-                                                    <tr key={key}>
-                                                        <th style={{ color: 'white' }}>{key}</th>
-                                                        <td style={{ color: 'white' }}>{activityMax[key]} kms</td>
-                                                    </tr>
-                                                )
-                                            })}
-                                        </tbody>
-                                    </table>
-                                </Box>
-                            </GridItemContent>
-                        </GridItemWrapper>
-
-                    </ResponsiveGridLayout>
-                    } 
-                    return content 
                 </Card>
 
                 <Card m="20px" min-width={"fit-content"} p="20px" bg={"#032d46"} >
