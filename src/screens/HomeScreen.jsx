@@ -15,6 +15,33 @@ import "react-resizable/css/styles.css";
 import { CdsModal, CdsModalActions, CdsModalContent, CdsModalHeader } from '@cds/react/modal';
 import { CdsButton } from '@cds/react/button'
 
+
+// ******************************************************
+import 'react-querybuilder/dist/query-builder.css';
+import { QueryBuilder } from 'react-querybuilder';
+
+const fields = [
+    { name: 'name', label: 'Name', type: 'string' },
+    { name: 'age', label: 'Age', type: 'number' },
+    { name: 'city', label: 'City', type: 'string' },
+];
+
+const initialQuery = {
+    "condition": "AND",
+    "rules": [
+        {
+            "id": "d2c7570d-097b-436d-aa2e-926ccbfb0a25",
+            "field": "name",
+            "operator": "=",
+            "valueSource": "value",
+            "value": "John Kurain",
+            "type": "string"
+        }
+    ],
+    "id": "d89895c0-5153-4192-9907-3dfce7d3b79a"
+};
+// ******************************************************
+
 import { Responsive, WidthProvider } from "react-grid-layout";
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -231,6 +258,17 @@ export const caloriesoptions = {
 };
 
 export default function HomeScreen() {
+
+    const [query, setQuery] = useState(initialQuery);
+
+    const onQueryChange = (newQuery) => {
+        const updatedQuery = {
+            ...newQuery,
+            rules: newQuery.rules.map(rule => ({ ...rule, type: fields.find(field => field.name === rule.field)?.type }))
+
+        };
+        setQuery(updatedQuery);
+    };
 
 
 
@@ -567,7 +605,7 @@ export default function HomeScreen() {
                         breakpoints={{ lg: 1200, md: 100 }}
                         cols={{ lg: 6, md: 1 }}
                         rowHeight={300}
-                        isResizable={true}
+                        isResizable={false}
                         resizeHandles={["se"]}
                         onLayoutChange={handleLayoutChange1}
                         width={1000}>
@@ -588,6 +626,17 @@ export default function HomeScreen() {
                     </ResponsiveGridLayout>
                 </Card>
             </div>
+
+            <QueryBuilder
+                fields={fields}
+                query={query}
+                onQueryChange={onQueryChange}
+            />
+            <div>
+                <h3>Query JSON:</h3>
+                <pre>{JSON.stringify(query, null, 2)}</pre>
+            </div>
+
 
             {/* <CdsModal >
                 <CdsModalHeader>
